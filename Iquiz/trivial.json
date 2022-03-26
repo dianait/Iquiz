@@ -1,0 +1,365 @@
+{
+"response_code": 0,
+"results": [
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "Who directed &quot;E.T. the Extra-Terrestrial&quot; (1982)?",
+"correct_answer": "Steven Spielberg",
+"incorrect_answers": [
+"Stanley Kubrick",
+"James Cameron",
+"Tim Burton"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In which 1973 film does Yul Brynner play a robotic cowboy who malfunctions and goes on a killing\tspree?",
+"correct_answer": "Westworld",
+"incorrect_answers": [
+"Runaway",
+"Android",
+"The Terminators"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In the 1984 movie &quot;The Terminator&quot;, what model number is the Terminator portrayed by Arnold Schwarzenegger?",
+"correct_answer": "T-800",
+"incorrect_answers": [
+"I-950",
+"T-888",
+"T-1000"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "This movie contains the quote, &quot;I love the smell of napalm in the morning!&quot;",
+"correct_answer": "Apocalypse Now",
+"incorrect_answers": [
+"Platoon",
+"The Deer Hunter",
+"Full Metal Jacket"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "This movie contains the quote, &quot;What we&#039;ve got here is a failure to communicate.&quot;",
+"correct_answer": "Cool Hand Luke",
+"incorrect_answers": [
+"Bonnie and Clyde",
+"The Graduate",
+"In the Heat of the Night"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In what year was the first Transformers movie released?",
+"correct_answer": "1986",
+"incorrect_answers": [
+"2007",
+"1984",
+"2009"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In the 1994 movie &quot;Speed&quot;, what is the minimum speed the bus must go to prevent to bomb from exploding?",
+"correct_answer": "50 mph",
+"incorrect_answers": [
+"60 mph",
+"40 mph",
+"70 mph"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In the 1979 British film &quot;Quadrophenia&quot; what is the name of the seaside city the mods are visiting?",
+"correct_answer": "Brighton",
+"incorrect_answers": [
+"Eastbourne",
+"Mousehole",
+"Bridlington"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "Which one of these films are shot entirely in one-take?",
+"correct_answer": "Russian Ark",
+"incorrect_answers": [
+"Good Will Hunting",
+"Birdman",
+"Schindler&#039;s List"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "Who played Sgt. Gordon Elias in &#039;Platoon&#039; (1986)?",
+"correct_answer": "Willem Dafoe",
+"incorrect_answers": [
+"Charlie Sheen",
+"Matt Damon",
+"Johnny Depp"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "hard",
+"question": "In the movie &quot;Scream&quot; who is Ghost Face?",
+"correct_answer": "Billy Loomis and Stu Macher",
+"incorrect_answers": [
+"Dewey Riley",
+"Sidney Prescott",
+"Archie Prescott and Philip Marv"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In The Lord of the Rings: The Fellowship of the Ring, which one of the following characters from the book was left out of the film?",
+"correct_answer": "Tom Bombadil",
+"incorrect_answers": [
+"Strider",
+"Barliman Butterbur",
+"Celeborn"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In Back to the Future Part II, Marty and Dr. Emmett Brown go to which future date?",
+"correct_answer": "October 21, 2015",
+"incorrect_answers": [
+"August 28, 2015",
+"July 20, 2015",
+"January 25, 2015"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "In the movie Gremlins, after what time of day should you not feed Mogwai?",
+"correct_answer": "Midnight",
+"incorrect_answers": [
+"Evening",
+"Morning",
+"Afternoon"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "In the 1995 film &quot;Balto&quot;, who are Steele&#039;s accomplices?",
+"correct_answer": "Kaltag, Nikki, and Star",
+"incorrect_answers": [
+"Dusty, Kirby, and Ralph",
+"Nuk, Yak, and Sumac",
+"Jenna, Sylvie, and Dixie"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "hard",
+"question": "In the &quot;Jurassic Park&quot; universe, when did &quot;Jurassic Park: San Diego&quot; begin construction?",
+"correct_answer": "1985",
+"incorrect_answers": [
+"1988",
+"1986",
+"1993"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "What was Bruce Campbell&#039;s iconic one-liner after getting a chainsaw hand in Evil Dead 2?",
+"correct_answer": "Groovy.",
+"incorrect_answers": [
+"Gnarly.",
+"Perfect.",
+"Nice."
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "What Queen song plays during the final fight scene of the film &quot;Hardcore Henry&quot;?",
+"correct_answer": "Don&#039;t Stop Me Now",
+"incorrect_answers": [
+"Brighton Rock",
+"Another Bites the Dust",
+"We Will Rock You"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "hard",
+"question": "Which of the following films was directed by Ivan Reitman, written by Gary Ross, featured Kevin Kline, and was released in 1993?",
+"correct_answer": "Dave",
+"incorrect_answers": [
+"John",
+"Will",
+"Carl"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "What character in the Winnie the Pooh films was added by Disney and does not appear in the original books?",
+"correct_answer": "Gopher",
+"incorrect_answers": [
+"Tigger",
+"Heffalumps",
+"Rabbit"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "In Finding Nemo, what was the name of Nemo&#039;s mom?",
+"correct_answer": "Coral",
+"incorrect_answers": [
+"Sandy",
+"Pearl",
+"Shelly"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "Where does the original Friday The 13th movie take place?",
+"correct_answer": "Camp Crystal Lake",
+"incorrect_answers": [
+"Packanack",
+"Higgins Haven",
+"Camp Forest Green"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "In which film does Humphrey Bogart say the famous line, &quot;Here&#039;s looking at you, kid&quot;?",
+"correct_answer": "Casablanca",
+"incorrect_answers": [
+"The Maltese Falcon",
+"The Treasure of the Sierra Madre",
+"Citizen Kane"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "Which of these Disney classics was released in 1970?",
+"correct_answer": "The Aristocats",
+"incorrect_answers": [
+"One Hundred and One Dalmatians",
+"The Fox and the Hound",
+"The Little Mermaid"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "Which actor and martial artist starred as Colonel Guile in the 1994 action film adaptation of Street Fighter?",
+"correct_answer": "Jean-Claude Van Damme",
+"incorrect_answers": [
+"Chuck Norris",
+"Steven Seagal",
+"Scott Adkins"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "In &quot;ALF&quot;, what was ALF&#039;s real name?",
+"correct_answer": "Gordon Shumway",
+"incorrect_answers": [
+"Gordon Milipp",
+"Gordon Foster",
+"Gordon von Gam"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "Which Marvel superhero did Chris Evans play prior to his role as Captain America?",
+"correct_answer": "Human Torch",
+"incorrect_answers": [
+"Cyclops",
+"Iceman",
+"Daredevil"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "easy",
+"question": "Who plays Jack Burton in the movie &quot;Big Trouble in Little China?&quot;",
+"correct_answer": "Kurt Russell",
+"incorrect_answers": [
+"Patrick Swayze",
+"John Cusack",
+"Harrison Ford"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "About how much money did it cost for Tommy Wiseau to make his masterpiece &quot;The Room&quot; (2003)?",
+"correct_answer": "$6 Million",
+"incorrect_answers": [
+"$20,000",
+"$1 Million",
+"$10 Million"
+]
+},
+{
+"category": "Entertainment: Film",
+"type": "multiple",
+"difficulty": "medium",
+"question": "What is the birth name of Michael Keaton?",
+"correct_answer": "Michael Douglas",
+"incorrect_answers": [
+"Michael Fox",
+"Michael Richards",
+"Michael Kane"
+]
+}
+]
+}

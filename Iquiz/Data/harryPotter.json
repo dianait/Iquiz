@@ -1,0 +1,14 @@
+{
+    "questions": [
+        {
+            "answer": [
+                { "text": "Hogwarts", "isCorrect": "true" },
+                { "text": "Howarts", "isCorrect": "false" },
+                { "text": "Hodwars", "isCorrect": "false" }
+                ],
+            "question": "What school does Harry Potter attend?"
+        }
+    ]
+}
+
+

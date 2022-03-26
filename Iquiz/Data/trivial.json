@@ -5,7 +5,7 @@
     "category": "Entertainment: Film",
     "type": "multiple",
     "difficulty": "easy",
-    "question": "Who directed &quot;E.T. the Extra-Terrestrial&quot; (1982)?",
+    "question": "Who directed E.T. the Extra-Terrestrial (1982)?",
     "correct_answer": "Steven Spielberg",
     "incorrect_answers": [
         "Stanley Kubrick",
@@ -29,7 +29,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "In the 1984 movie &quot;The Terminator&quot;, what model number is the Terminator portrayed by Arnold Schwarzenegger?",
+"question": "In the 1984 movie The Terminator, what model number is the Terminator portrayed by Arnold Schwarzenegger?",
 "correct_answer": "T-800",
 "incorrect_answers": [
 "I-950",
@@ -41,7 +41,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "This movie contains the quote, &quot;I love the smell of napalm in the morning!&quot;",
+"question": "This movie contains the quote, I love the smell of napalm in the morning!",
 "correct_answer": "Apocalypse Now",
 "incorrect_answers": [
 "Platoon",
@@ -53,7 +53,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "This movie contains the quote, &quot;What we&#039;ve got here is a failure to communicate.&quot;",
+"question": "This movie contains the quote, What we've got here is a failure to communicate.",
 "correct_answer": "Cool Hand Luke",
 "incorrect_answers": [
 "Bonnie and Clyde",
@@ -77,7 +77,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "In the 1994 movie &quot;Speed&quot;, what is the minimum speed the bus must go to prevent to bomb from exploding?",
+"question": "In the 1994 movie Speed, what is the minimum speed the bus must go to prevent to bomb from exploding?",
 "correct_answer": "50 mph",
 "incorrect_answers": [
 "60 mph",
@@ -89,7 +89,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "In the 1979 British film &quot;Quadrophenia&quot; what is the name of the seaside city the mods are visiting?",
+"question": "In the 1979 British film Quadrophenia what is the name of the seaside city the mods are visiting?",
 "correct_answer": "Brighton",
 "incorrect_answers": [
 "Eastbourne",
@@ -106,14 +106,14 @@
 "incorrect_answers": [
 "Good Will Hunting",
 "Birdman",
-"Schindler&#039;s List"
+"Schindler's List"
 ]
 },
 {
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "Who played Sgt. Gordon Elias in &#039;Platoon&#039; (1986)?",
+"question": "Who played Sgt. Gordon Elias in Platoon (1986)?",
 "correct_answer": "Willem Dafoe",
 "incorrect_answers": [
 "Charlie Sheen",
@@ -125,7 +125,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "hard",
-"question": "In the movie &quot;Scream&quot; who is Ghost Face?",
+"question": "In the movie Scream who is Ghost Face?",
 "correct_answer": "Billy Loomis and Stu Macher",
 "incorrect_answers": [
 "Dewey Riley",
@@ -173,7 +173,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "easy",
-"question": "In the 1995 film &quot;Balto&quot;, who are Steele&#039;s accomplices?",
+"question": "In the 1995 film Balto, who are Steele's accomplices?",
 "correct_answer": "Kaltag, Nikki, and Star",
 "incorrect_answers": [
 "Dusty, Kirby, and Ralph",
@@ -185,7 +185,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "hard",
-"question": "In the &quot;Jurassic Park&quot; universe, when did &quot;Jurassic Park: San Diego&quot; begin construction?",
+"question": "In the Jurassic Park universe, when did Jurassic Park: San Diego begin construction?",
 "correct_answer": "1985",
 "incorrect_answers": [
 "1988",
@@ -197,7 +197,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "easy",
-"question": "What was Bruce Campbell&#039;s iconic one-liner after getting a chainsaw hand in Evil Dead 2?",
+"question": "What was Bruce Campbell's iconic one-liner after getting a chainsaw hand in Evil Dead 2?",
 "correct_answer": "Groovy.",
 "incorrect_answers": [
 "Gnarly.",
@@ -209,8 +209,8 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "What Queen song plays during the final fight scene of the film &quot;Hardcore Henry&quot;?",
-"correct_answer": "Don&#039;t Stop Me Now",
+"question": "What Queen song plays during the final fight scene of the film Hardcore Henry?",
+"correct_answer": "Don't Stop Me Now",
 "incorrect_answers": [
 "Brighton Rock",
 "Another Bites the Dust",
@@ -245,7 +245,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "In Finding Nemo, what was the name of Nemo&#039;s mom?",
+"question": "In Finding Nemo, what was the name of Nemo's mom?",
 "correct_answer": "Coral",
 "incorrect_answers": [
 "Sandy",
@@ -269,7 +269,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "easy",
-"question": "In which film does Humphrey Bogart say the famous line, &quot;Here&#039;s looking at you, kid&quot;?",
+"question": "In which film does Humphrey Bogart say the famous line, looking at you, kid?",
 "correct_answer": "Casablanca",
 "incorrect_answers": [
 "The Maltese Falcon",
@@ -305,7 +305,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "easy",
-"question": "In &quot;ALF&quot;, what was ALF&#039;s real name?",
+"question": "In ALF, what was ALF real name?",
 "correct_answer": "Gordon Shumway",
 "incorrect_answers": [
 "Gordon Milipp",
@@ -329,7 +329,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "easy",
-"question": "Who plays Jack Burton in the movie &quot;Big Trouble in Little China?&quot;",
+"question": "Who plays Jack Burton in the movie Big Trouble in Little China?",
 "correct_answer": "Kurt Russell",
 "incorrect_answers": [
 "Patrick Swayze",
@@ -341,7 +341,7 @@
 "category": "Entertainment: Film",
 "type": "multiple",
 "difficulty": "medium",
-"question": "About how much money did it cost for Tommy Wiseau to make his masterpiece &quot;The Room&quot; (2003)?",
+"question": "About how much money did it cost for Tommy Wiseau to make his masterpiece The Room (2003)?",
 "correct_answer": "$6 Million",
 "incorrect_answers": [
 "$20,000",

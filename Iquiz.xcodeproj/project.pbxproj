@@ -19,9 +19,7 @@
 		137B3CB127D432D500E3FE01 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB027D432D500E3FE01 /* Ranking.swift */; };
 		137B3CB327D436B400E3FE01 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB227D436B400E3FE01 /* CustomText.swift */; };
 		137B3CB727D43D3A00E3FE01 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB627D43D3A00E3FE01 /* Counter.swift */; };
-		137B3CBA27D443AA00E3FE01 /* harryPotter.json in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB927D443AA00E3FE01 /* harryPotter.json */; };
 		137B3CBC27D4450400E3FE01 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CBB27D4450400E3FE01 /* Quiz.swift */; };
-		137B3CBD27D4480B00E3FE01 /* harryPotter.json in Resources */ = {isa = PBXBuildFile; fileRef = 137B3CB927D443AA00E3FE01 /* harryPotter.json */; };
 		13E1724527E9D78C00FDE567 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1724427E9D78C00FDE567 /* API.swift */; };
 		13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */ = {isa = PBXBuildFile; fileRef = 131CA51127EF43C300D54C63 /* trivial.json */; };
 /* End PBXBuildFile section */
@@ -60,7 +58,6 @@
 		137B3CB027D432D500E3FE01 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		137B3CB227D436B400E3FE01 /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
 		137B3CB627D43D3A00E3FE01 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
-		137B3CB927D443AA00E3FE01 /* harryPotter.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = harryPotter.json; sourceTree = "<group>"; };
 		137B3CBB27D4450400E3FE01 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		13E1724427E9D78C00FDE567 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,7 +161,6 @@
 		137B3CB827D4438500E3FE01 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				137B3CB927D443AA00E3FE01 /* harryPotter.json */,
 				13E1724427E9D78C00FDE567 /* API.swift */,
 				131CA51127EF43C300D54C63 /* trivial.json */,
 			);
@@ -276,7 +272,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */,
-				137B3CBD27D4480B00E3FE01 /* harryPotter.json in Resources */,
 				1369DD9327D42B3200FC6343 /* Preview Assets.xcassets in Resources */,
 				1369DD9027D42B3200FC6343 /* Assets.xcassets in Resources */,
 			);
@@ -303,7 +298,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				137B3CBA27D443AA00E3FE01 /* harryPotter.json in Sources */,
 				137B3CAF27D4325200E3FE01 /* Question.swift in Sources */,
 				1369DD8E27D42B3000FC6343 /* ContentView.swift in Sources */,
 				13299D3327EA5BFC00BD2D5F /* QuizViewModel.swift in Sources */,

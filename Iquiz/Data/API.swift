@@ -1,44 +1,6 @@
 import Foundation
 import SwiftUI
 
-struct IQuestion {
-    let question: String
-    let answers: [Answer]
-}
-
-struct Answer: Hashable {
-    let text: String
-    let isCorrect: String
-}
-
-    func getQuestions() -> [IQuestion] {
-        var returnQuestion: [IQuestion] = []
-        if let path = Bundle.main.path(forResource: "harryPotter", ofType: "json") {
-            do {
-                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
-                  if let jsonResult = jsonResult as? Dictionary<String, AnyObject>,
-                     let questions = jsonResult["questions"] as? [AnyObject] {
-                      for q in questions {
-                          var answersParsed: [Answer] = []
-                          let question = q["question"]!! as! String
-                          if let answer = q["answer"]!! as? [AnyObject] {
-                              for a in answer {
-                                  answersParsed.append(Answer(text: a["text"] as! String, isCorrect: a["isCorrect"] as! String))
-                              }
-                          }
-                          returnQuestion.append(
-                            IQuestion(question: question, answers: answersParsed))
-                         }
-                        return returnQuestion
-                  }
-              } catch {
-                  print("Invalid filename/path.")
-              }
-        }
-        return returnQuestion
-    }
-
 struct TrivialQuestion {
     let category: String
     let type: String

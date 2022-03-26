@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct Counter: View {
-    @State var timeRemaining: Int = 30
+    @State var timeRemaining: Int
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {

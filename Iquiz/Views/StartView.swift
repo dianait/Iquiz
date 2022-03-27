@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct UserView: View {
+struct StartView: View {
     var viewModel: QuizViewModel
     
     var body: some View {
@@ -13,8 +13,8 @@ struct UserView: View {
     }
 }
 
-struct UserView_Previews: PreviewProvider {
+struct StartView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView(viewModel: QuizViewModel())
+        StartView(viewModel: QuizViewModel())
     }
 }

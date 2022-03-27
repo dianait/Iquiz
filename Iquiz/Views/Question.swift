@@ -18,7 +18,6 @@ struct Question: View {
             }.onAppear{
                     self.question = play.questions[index]
             }
-            CustomText(text: "🎲 \(play.name)")
         }
  
         VStack {
@@ -29,7 +28,7 @@ struct Question: View {
                     if ans == self.question.correct_answer {
                         self.play.score += self.timeRemaining
                         if self.index == self.play.NUM_QUESTIONS {
-                            viewModel.state = .finish([Score(name: self.play.name, score: String(self.play.score))])
+                            viewModel.state = .saveData(Score(name: play.name, score: String(play.score)))
                             return
                         }
                         

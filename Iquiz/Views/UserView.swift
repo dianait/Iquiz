@@ -6,9 +6,7 @@ struct UserView: View {
     var body: some View {
         VStack{
             CustomText(text: " 📽 CINEMA QUIZ")
-            Image("cinema")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            ImageView()
             ButtonView(text: "START", handle: viewModel.fetchQuestions)
         }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

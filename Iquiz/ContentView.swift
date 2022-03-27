@@ -15,7 +15,7 @@ struct ContentView: View {
                 ) {
                         CustomText(text: "✨ COMENZAR")
                     }
-                NavigationLink(destination: Ranking(ranking:rankingMock)) {
+                NavigationLink(destination: Ranking(viewModel: QuizViewModel(), ranking:rankingMock)) {
                         CustomText(text: "🏁 RANKING")
                     }
                 }

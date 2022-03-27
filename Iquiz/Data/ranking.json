@@ -1,0 +1,15 @@
+{
+    "ranking":
+    [
+        {"name": "Diana", "score": "34"},
+        {"name": "Jordi", "score": "45"},
+        {"name": "Alexia", "score": "67"},
+        {"name": "Naza", "score": "167"},
+        {"name": "Oscar", "score": "123"},
+        {"name": "Matt", "score": "89"},
+        {"name": "Pam", "score": "76"},
+        {"name": "Nuria", "score": "34"},
+        {"name": "Joan", "score": "87"},
+        {"name": "Sus", "score": "123"}
+    ]
+}

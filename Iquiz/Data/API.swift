@@ -42,4 +42,28 @@ func getTrivial() ->  [TrivialQuestion] {
     return returnQuestion
 }
 
+func getRanking() -> [Score] {
+    var ranking: [Score] = []
+    if let path = Bundle.main.path(forResource: "ranking", ofType: "json") {
+        do {
+              let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+              let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+              if let jsonResult = jsonResult as? Dictionary<String, AnyObject>,
+                 let rank = jsonResult["ranking"] as? [AnyObject] {
+                  for r in rank {
+                      let name = r["name"]!! as! String
+                      let score = r["score"]!! as! String
+                      
+                      ranking.append(
+                        Score(name: name, score: score))
+                     }
+                    return ranking
+              }
+          } catch {
+              print("Invalid filename/path.")
+          }
+    }
+    return ranking
+}
+
 

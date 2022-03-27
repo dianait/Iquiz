@@ -10,8 +10,10 @@ var body: some View {
             UserView(viewModel: viewModel)
         case .playing(let play):
             Question(viewModel: viewModel, play: play)
-        case .finish(let score):
-            Ranking(ranking: score)
+        case .saveData(let userScore):
+            FormView(viewModel: viewModel, score: userScore)
+        case .finish(let scoreArray):
+            Ranking(viewModel: viewModel, ranking: scoreArray)
         case .failed(_):
             Text("Something failed")
         }

@@ -2,13 +2,14 @@ import Foundation
 import SwiftUI
 
 struct Score: Hashable {
-    let name: String
+    var name: String
     let score: String
 }
 
 enum QuizState {
     case initial
     case playing(Play)
+    case saveData(Score)
     case finish([Score])
     case failed(Error)
 }

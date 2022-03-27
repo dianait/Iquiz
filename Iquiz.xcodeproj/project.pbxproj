@@ -23,6 +23,9 @@
 		13BEC90327F0703700EAF549 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90227F0703700EAF549 /* ScoreView.swift */; };
 		13BEC90527F07C8300EAF549 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90427F07C8300EAF549 /* UserView.swift */; };
 		13BEC90727F0839500EAF549 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90627F0839500EAF549 /* ButtonView.swift */; };
+		13BEC90927F0874F00EAF549 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90827F0874F00EAF549 /* FormView.swift */; };
+		13BEC90B27F08BB800EAF549 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90A27F08BB800EAF549 /* ImageView.swift */; };
+		13BEC90E27F09ACD00EAF549 /* ranking.json in Resources */ = {isa = PBXBuildFile; fileRef = 13BEC90C27F0969900EAF549 /* ranking.json */; };
 		13E1724527E9D78C00FDE567 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1724427E9D78C00FDE567 /* API.swift */; };
 		13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */ = {isa = PBXBuildFile; fileRef = 131CA51127EF43C300D54C63 /* trivial.json */; };
 /* End PBXBuildFile section */
@@ -65,6 +68,9 @@
 		13BEC90227F0703700EAF549 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		13BEC90427F07C8300EAF549 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		13BEC90627F0839500EAF549 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		13BEC90827F0874F00EAF549 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		13BEC90A27F08BB800EAF549 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		13BEC90C27F0969900EAF549 /* ranking.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ranking.json; sourceTree = "<group>"; };
 		13E1724427E9D78C00FDE567 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,9 +126,9 @@
 				137B3CAD27D4323600E3FE01 /* Views */,
 				1369DD8B27D42B3000FC6343 /* IquizApp.swift */,
 				1369DD8D27D42B3000FC6343 /* ContentView.swift */,
+				13299D3227EA5BFC00BD2D5F /* QuizViewModel.swift */,
 				1369DD8F27D42B3200FC6343 /* Assets.xcassets */,
 				1369DD9127D42B3200FC6343 /* Preview Content */,
-				13299D3227EA5BFC00BD2D5F /* QuizViewModel.swift */,
 			);
 			path = Iquiz;
 			sourceTree = "<group>";
@@ -163,6 +169,8 @@
 				13BEC90227F0703700EAF549 /* ScoreView.swift */,
 				13BEC90427F07C8300EAF549 /* UserView.swift */,
 				13BEC90627F0839500EAF549 /* ButtonView.swift */,
+				13BEC90827F0874F00EAF549 /* FormView.swift */,
+				13BEC90A27F08BB800EAF549 /* ImageView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +180,7 @@
 			children = (
 				13E1724427E9D78C00FDE567 /* API.swift */,
 				131CA51127EF43C300D54C63 /* trivial.json */,
+				13BEC90C27F0969900EAF549 /* ranking.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -280,6 +289,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BEC90E27F09ACD00EAF549 /* ranking.json in Resources */,
 				13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */,
 				1369DD9327D42B3200FC6343 /* Preview Assets.xcassets in Resources */,
 				1369DD9027D42B3200FC6343 /* Assets.xcassets in Resources */,
@@ -307,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13BEC90927F0874F00EAF549 /* FormView.swift in Sources */,
 				13BEC90527F07C8300EAF549 /* UserView.swift in Sources */,
 				137B3CAF27D4325200E3FE01 /* Question.swift in Sources */,
 				13BEC90727F0839500EAF549 /* ButtonView.swift in Sources */,
@@ -318,6 +329,7 @@
 				137B3CBC27D4450400E3FE01 /* Quiz.swift in Sources */,
 				13E1724527E9D78C00FDE567 /* API.swift in Sources */,
 				137B3CB327D436B400E3FE01 /* CustomText.swift in Sources */,
+				13BEC90B27F08BB800EAF549 /* ImageView.swift in Sources */,
 				13BEC90327F0703700EAF549 /* ScoreView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

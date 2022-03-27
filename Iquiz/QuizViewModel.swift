@@ -1,27 +1,24 @@
 import Foundation
 import SwiftUI
 
-struct Score {
+struct Score: Hashable {
     let name: String
     let score: String
-}
-
-struct Result {
-    let top10: [Score]
 }
 
 enum QuizState {
     case initial
     case playing(Play)
-    case finish(Result)
+    case finish([Score])
     case failed(Error)
 }
 
 struct Play {
-    let name: String = "Player1"
+    let name: String = "Diana"
     let questions: [TrivialQuestion]
     var score: Int = 0
     var index: Int = 0
+    let NUM_QUESTIONS = 1
 }
 
 class QuizViewModel: ObservableObject {

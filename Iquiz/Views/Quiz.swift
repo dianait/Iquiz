@@ -12,9 +12,9 @@ var body: some View {
                     viewModel.fetchQuestions()
                 }
         case .playing(let play):
-            Question(play: play)
-        case .finish(_):
-            Ranking(ranking: rankingMock)
+            Question(viewModel: viewModel, play: play)
+        case .finish(let score):
+            Ranking(ranking: score)
         case .failed(_):
             Text("Something failed")
         }

@@ -1,9 +1,10 @@
 import SwiftUI
 
 let rankingMock = [
-    IRanking(name: "Diana", score: "3443"),
-    IRanking(name: "Pablo", score: "312443")
+    Score(name: "Diana", score: "3443"),
+    Score(name: "Pablo", score: "312443")
 ]
+
 struct ContentView: View {
 
     var body: some View {
@@ -14,7 +15,7 @@ struct ContentView: View {
                 ) {
                         CustomText(text: "✨ COMENZAR")
                     }
-                NavigationLink(destination: Ranking(ranking: rankingMock)) {
+                NavigationLink(destination: Ranking(ranking:rankingMock)) {
                         CustomText(text: "🏁 RANKING")
                     }
                 }

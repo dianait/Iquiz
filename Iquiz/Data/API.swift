@@ -11,7 +11,7 @@ struct TrivialQuestion {
 
 }
 
-let trivialQuestionMock = TrivialQuestion(category: "Entertainment: Film", type: "multiple", difficulty: "easy", question: "Who directed &quot;E.T. the Extra-Terrestrial&quot; (1982)?", correct_answer: "Steven Spielberg", incorrect_answers: ["Stanley Kubrick", "James Cameron", "Tim Burton"])
+let trivialQuestionMock = TrivialQuestion(category: "Entertainment: Film", type: "multiple", difficulty: "easy", question: "Who directed E.T. the Extra-Terrestrial (1982)?", correct_answer: "Steven Spielberg", incorrect_answers: ["Stanley Kubrick", "James Cameron", "Tim Burton"])
 
 func getTrivial() ->  [TrivialQuestion] {
     var returnQuestion: [TrivialQuestion] = []

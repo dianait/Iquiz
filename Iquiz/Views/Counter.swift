@@ -6,7 +6,7 @@ struct Counter: View {
     
     var body: some View {
         VStack{
-            CustomText(text: "\(timeRemaining)")
+            CustomText(text: "⏱ TIME: \(timeRemaining)")
                     .onReceive(timer) { _ in
                         if self.timeRemaining > 0 {
                             self.timeRemaining -= 1

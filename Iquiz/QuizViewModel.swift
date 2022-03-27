@@ -22,6 +22,12 @@ struct Play {
     let NUM_QUESTIONS = 10
 }
 
+let rankingMock = [
+    Score(name: "PLAYER1", score: String(123)),
+    Score(name: "PLAYER2", score: String(45)),
+    Score(name: "PLAYER3", score: String(34))
+]
+
 class QuizViewModel: ObservableObject {
     var questions: [TrivialQuestion] = []
     @Published var state: QuizState = .initial

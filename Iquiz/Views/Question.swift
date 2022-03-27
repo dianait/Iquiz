@@ -29,18 +29,21 @@ struct Question: View {
             CustomText(text: self.question.question)
             ForEach(sortAnswers(correct_answer: self.question.correct_answer, incorrect_answers:self.question.incorrect_answers), id: \.self) { ans in
                 ButtonView(text:ans, handle: {
-                    if ans == self.question.correct_answer {
+                    
+                    if self.index == self.play.NUM_QUESTIONS {
+                        viewModel.state = .saveData(Score(name: play.name, score: String(play.score)))
+                        return
+                    }
+                    
+                    if (ans == self.question.correct_answer) {
                         self.play.score += self.timeRemaining
-                        if self.index == self.play.NUM_QUESTIONS {
-                            viewModel.state = .saveData(Score(name: play.name, score: String(play.score)))
-                            return
-                        }
                         
+                    }
+                    
                         self.timeRemaining = 30
                         self.index += 1
                         self.question = play.questions[index]
                        
-                    }
                     
                 })
               }

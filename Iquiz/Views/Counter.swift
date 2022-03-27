@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct Counter: View {
-    @State var timeRemaining: Int
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    @Binding var timeRemaining: Int
+    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
         VStack{
@@ -17,8 +17,3 @@ struct Counter: View {
         }
     }
 
-struct Counter_Previews: PreviewProvider {
-    static var previews: some View {
-        Counter(timeRemaining: 30)
-    }
-}

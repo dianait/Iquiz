@@ -8,13 +8,14 @@ struct Question: View {
     
     var body: some View {
         VStack {
-            Counter(timeRemaining: timeRemaining)
+            Counter(timeRemaining: $timeRemaining)
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }.onAppear{
             self.question = play.questions[index]
         }
         
         VStack {
+            CustomText(text: String(play.score))
             CustomText(text: self.question.question)
             ForEach(self.question.incorrect_answers + [self.question.correct_answer], id: \.self) { ans in
                 Button(ans){

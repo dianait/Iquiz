@@ -11,7 +11,8 @@ struct Ranking: View {
                 .fontWeight(.bold)
                 .padding()
                 .onAppear{
-                self.ranking = getRanking()
+                let rankingUnsorted = getRanking()
+                self.ranking = rankingUnsorted.sorted(by: { $0.score < $1.score })
             }
             ScrollView{
                 ForEach(self.ranking, id: \.self) { item in

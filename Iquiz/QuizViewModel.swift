@@ -30,4 +30,8 @@ class QuizViewModel: ObservableObject {
         self.questions = getTrivial()
         self.state = .playing(Play(questions: self.questions))
     }
+    
+    func fetchRanking() {
+        self.state = .finish(rankingMock)
+    }
 }

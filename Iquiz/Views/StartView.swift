@@ -4,12 +4,21 @@ struct StartView: View {
     var viewModel: QuizViewModel
     
     var body: some View {
-        VStack{
-            CustomText(text: " 📽 CINEMA QUIZ")
-            ImageView()
-            ButtonView(text: "START", handle: viewModel.fetchQuestions)
+        NavigationView {
+            VStack{
+                CustomText(text: " 📽 CINEMA QUIZ")
+                ImageView()
+                NavigationLink(destination:Quiz()) {
+                    ButtonView(text: "✨ START", handle: viewModel.fetchQuestions)
+                }
+                NavigationLink(destination:Ranking(viewModel: viewModel, ranking: rankingMock)) {
+                    ButtonView(text: "🏁 RANKING", handle: viewModel.fetchRanking)
+                }
+            }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
         }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+
     }
 }
 

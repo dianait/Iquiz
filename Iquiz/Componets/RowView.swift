@@ -7,9 +7,10 @@ struct RowView: View {
     var body: some View {
         HStack{
             CustomText(text: "😊 \(name)")
+                .frame(maxWidth: .infinity, alignment: .leading)
             CustomText(text: "🎖\(score)")
+                .frame(maxWidth: .infinity, alignment: .trailing)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 

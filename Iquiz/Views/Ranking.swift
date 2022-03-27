@@ -13,9 +13,13 @@ struct Ranking: View {
                 .onAppear{
                 self.ranking = getRanking()
             }
-            ForEach(self.ranking, id: \.self) { item in
-                RowView(name: item.name, score: item.score)
+            ScrollView{
+                ForEach(self.ranking, id: \.self) { item in
+                    RowView(name: item.name, score: item.score)
+                    Divider()
+                }
             }
+         
             ButtonView(text: "TRY AGAIN", handle: {
                 viewModel.state = .initial
             })

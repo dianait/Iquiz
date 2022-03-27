@@ -19,7 +19,7 @@ struct Play {
     let questions: [TrivialQuestion]
     var score: Int = 0
     var index: Int = 0
-    let NUM_QUESTIONS = 1
+    let NUM_QUESTIONS = 10
 }
 
 class QuizViewModel: ObservableObject {

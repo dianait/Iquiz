@@ -1,6 +1,10 @@
 import SwiftUI
 
-
+func sortAnswers(correct_answer: String, incorrect_answers: [String]) -> [String] {
+    let arrayAnswers = incorrect_answers + [correct_answer]
+    let sortAnswers: [String] = arrayAnswers.shuffled()
+    return sortAnswers
+}
 
 struct Question: View {
     var viewModel: QuizViewModel
@@ -23,7 +27,7 @@ struct Question: View {
         VStack {
            
             CustomText(text: self.question.question)
-            ForEach(self.question.incorrect_answers + [self.question.correct_answer], id: \.self) { ans in
+            ForEach(sortAnswers(correct_answer: self.question.correct_answer, incorrect_answers:self.question.incorrect_answers), id: \.self) { ans in
                 ButtonView(text:ans, handle: {
                     if ans == self.question.correct_answer {
                         self.play.score += self.timeRemaining

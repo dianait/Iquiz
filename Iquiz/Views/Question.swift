@@ -1,11 +1,14 @@
 import SwiftUI
 
+
+
 struct Question: View {
     var viewModel: QuizViewModel
     @State var play: Play
     @State var question: TrivialQuestion = trivialQuestionMock
     @State var index: Int = 0
     @State var timeRemaining: Int = 30
+    
     
     var body: some View {
         VStack {
@@ -15,13 +18,14 @@ struct Question: View {
             }.onAppear{
                     self.question = play.questions[index]
             }
+            CustomText(text: "🎲 \(play.name)")
         }
  
         VStack {
            
             CustomText(text: self.question.question)
             ForEach(self.question.incorrect_answers + [self.question.correct_answer], id: \.self) { ans in
-                Button(ans){
+                ButtonView(text:ans, handle: {
                     if ans == self.question.correct_answer {
                         self.play.score += self.timeRemaining
                         if self.index == self.play.NUM_QUESTIONS {
@@ -33,10 +37,9 @@ struct Question: View {
                         self.index += 1
                         self.question = play.questions[index]
                        
-                        
-                        
                     }
-                }
+                    
+                })
               }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }

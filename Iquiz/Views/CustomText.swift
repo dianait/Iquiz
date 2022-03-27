@@ -10,7 +10,7 @@ struct CustomText: View {
     var body: some View {
         Text(self.text)
             .fontWeight(.semibold)
-            .font(.subheadline)
+            .font(.title2)
             .padding()
     }
 }

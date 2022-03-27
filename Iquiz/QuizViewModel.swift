@@ -14,7 +14,7 @@ enum QuizState {
 }
 
 struct Play {
-    let name: String = "Diana"
+    let name: String = "Player 1"
     let questions: [TrivialQuestion]
     var score: Int = 0
     var index: Int = 0

@@ -7,10 +7,7 @@ var body: some View {
     VStack{
         switch viewModel.state {
         case .initial:
-            Color.clear
-                .onAppear{
-                    viewModel.fetchQuestions()
-                }
+            UserView(viewModel: viewModel)
         case .playing(let play):
             Question(viewModel: viewModel, play: play)
         case .finish(let score):

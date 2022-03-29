@@ -25,7 +25,6 @@
 		13BEC90727F0839500EAF549 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90627F0839500EAF549 /* ButtonView.swift */; };
 		13BEC90927F0874F00EAF549 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90827F0874F00EAF549 /* FormView.swift */; };
 		13BEC90B27F08BB800EAF549 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90A27F08BB800EAF549 /* ImageView.swift */; };
-		13BEC90E27F09ACD00EAF549 /* ranking.json in Resources */ = {isa = PBXBuildFile; fileRef = 13BEC90C27F0969900EAF549 /* ranking.json */; };
 		13E1724527E9D78C00FDE567 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1724427E9D78C00FDE567 /* API.swift */; };
 		13F450F727F0BB00006497A4 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F450F627F0BB00006497A4 /* RowView.swift */; };
 		13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */ = {isa = PBXBuildFile; fileRef = 131CA51127EF43C300D54C63 /* trivial.json */; };
@@ -71,7 +70,6 @@
 		13BEC90627F0839500EAF549 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		13BEC90827F0874F00EAF549 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		13BEC90A27F08BB800EAF549 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
-		13BEC90C27F0969900EAF549 /* ranking.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ranking.json; sourceTree = "<group>"; };
 		13E1724427E9D78C00FDE567 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		13F450F627F0BB00006497A4 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -178,7 +176,6 @@
 			children = (
 				13E1724427E9D78C00FDE567 /* API.swift */,
 				131CA51127EF43C300D54C63 /* trivial.json */,
-				13BEC90C27F0969900EAF549 /* ranking.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13BEC90E27F09ACD00EAF549 /* ranking.json in Resources */,
 				13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */,
 				1369DD9327D42B3200FC6343 /* Preview Assets.xcassets in Resources */,
 				1369DD9027D42B3200FC6343 /* Assets.xcassets in Resources */,

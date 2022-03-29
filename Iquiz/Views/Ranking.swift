@@ -6,16 +6,19 @@ struct Ranking: View {
     
     var body: some View {
         VStack {
-            Text("🏁Ranking")
-                .font(.title)
-                .fontWeight(.bold)
-                .padding()
-            if self.ranking != [] {
-                Button("🗑"){
-                    viewModel.eraseRanking()
-                    self.ranking = []
+            HStack{
+                Text("🏁Ranking")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .padding()
+                if self.ranking != [] {
+                    Button("🚮"){
+                        viewModel.eraseRanking()
+                        self.ranking = []
+                    }
                 }
             }
+           
             ScrollView{
                 ForEach(self.ranking, id: \.self) { item in
                     RowView(name: item.name, score: item.score)

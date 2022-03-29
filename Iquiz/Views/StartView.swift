@@ -8,7 +8,7 @@ struct StartView: View {
             VStack{
                 ImageView()
                     ButtonView(text: "✨ START", handle: viewModel.fetchQuestions)
-                    ButtonView(text: "🏁 RANKING", handle: viewModel.fetchRanking)
+                    ButtonView(text: "🏁 RANKING", handle: viewModel.gotRanking)
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             

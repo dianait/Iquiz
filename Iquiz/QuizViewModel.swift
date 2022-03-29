@@ -27,26 +27,44 @@ let rankingMock = [
     Score(name: "PLAYER3", score: 34)
 ]
 
+
+
 class QuizViewModel: ObservableObject {
-    var questions: [TrivialQuestion] = []
     @Published var state: QuizState = .initial
-    @State var ranking: [Score] = []
-    
+    var questions: [TrivialQuestion] = []
+    var ranking: [Score] = []
+
+    init(){
+        self.ranking = get()
+        if self.ranking == [] {
+            let rank = getRanking()
+            let rankSorted: [Score] = rank.sorted(by: { $0.score > $1.score })
+            save(ranking: rankSorted)
+        }
+        self.questions = getTrivial()
+    }
+        
     func fetchQuestions() {
-        let questionsUnsorted = getTrivial()
-        self.questions = questionsUnsorted.shuffled()
-        self.state = .playing(Play(questions: self.questions))
+        let questionUnsorted =  self.questions.shuffled()
+        self.state = .playing(Play(questions:questionUnsorted))
     }
     
-    func fetchRanking() {
-        self.state = .finish(getRanking())
+    func gotRanking() {
+        self.state = .finish(self.ranking)
     }
     
     func sortRanking(score: Score) -> [Score] {
-        var rank = getRanking()
-        rank.append(score)
-        var rankSorted: [Score] = rank.sorted(by: { $0.score > $1.score })
-        rankSorted.remove(at: 10)
+        self.ranking.append(score)
+        var rankSorted: [Score] = self.ranking.sorted(by: { $0.score > $1.score })
+        while rankSorted.count > 10 {
+            rankSorted.removeLast()
+        }
+        self.ranking = rankSorted
         return rankSorted
+    }
+    
+    func eraseRanking() {
+        self.ranking.removeAll()
+        save(ranking: self.ranking)
     }
 }

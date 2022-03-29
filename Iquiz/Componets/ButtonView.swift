@@ -9,10 +9,8 @@ struct ButtonView: View {
                handle()
         }.padding(24)
             .font(.system(.title2, design: .monospaced))
-            .frame(width: 300, height: 50)
-            .foregroundColor(.white)
-            .background(Color.blue.opacity(0.6))
-            .cornerRadius(10)
+            .frame(width: 400)
+            .border(Color.blue)
     }
 }
 

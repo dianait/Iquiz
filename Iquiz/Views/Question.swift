@@ -5,7 +5,13 @@ struct Question: View {
     @State var play: Play
     @State var question: TrivialQuestion = trivialQuestionMock
     @State var index: Int = 0
-    @State var timeRemaining: Int = 30
+    @State var timeRemaining: Int = 5
+    
+    private func nextQuestion() -> Void {
+        self.timeRemaining = 30
+        self.index += 1
+        self.question = play.questions[index]
+    }
     
     var body: some View {
         VStack {
@@ -16,9 +22,8 @@ struct Question: View {
                     self.question = play.questions[index]
             }
         }
- 
+        
         VStack {
-           
             CustomText(text: self.question.question)
             ForEach(self.question.answers.shuffled(), id: \.self) { ans in
                 ButtonView(text:ans, handle: {
@@ -29,9 +34,7 @@ struct Question: View {
                     if (ans == self.question.correct_answer) {
                         self.play.score += self.timeRemaining
                     }
-                        self.timeRemaining = 30
-                        self.index += 1
-                        self.question = play.questions[index]
+                    self.nextQuestion()
                 })
               }
         }.frame(maxWidth: .infinity, maxHeight: .infinity)

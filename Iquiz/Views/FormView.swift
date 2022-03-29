@@ -9,7 +9,7 @@ struct FormView: View {
     var body: some View {
         VStack {
             ImageView()
-            CustomText(text: "What's your name ❓")
+            ScoreView(score: score.score)
             TextField("Your name", text: self.$username)
                 .padding()
 

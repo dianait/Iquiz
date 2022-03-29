@@ -1,5 +1,16 @@
 import Foundation
 
+struct Score: Codable, Hashable {
+    var name: String
+    let score: Int
+}
+
+let rankingMock = [
+    Score(name: "PLAYER1", score: 123),
+    Score(name: "PLAYER2", score: 45),
+    Score(name: "PLAYER3", score: 34)
+]
+
 class StorageController {
     var ranking: [Score] = []
     

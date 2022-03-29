@@ -1,11 +1,6 @@
 import Foundation
 import SwiftUI
 
-struct Score: Codable, Hashable {
-    var name: String
-    let score: Int
-}
-
 enum QuizState {
     case initial
     case playing(Play)
@@ -17,16 +12,9 @@ struct Play {
     let name: String = "Player 1"
     let questions: [TrivialQuestion]
     var score: Int = 0
-    var index: Int = 0
-    let NUM_QUESTIONS = 1
+    var index: Int = 1
+    let NUM_QUESTIONS = 10
 }
-
-let rankingMock = [
-    Score(name: "PLAYER1", score: 123),
-    Score(name: "PLAYER2", score: 45),
-    Score(name: "PLAYER3", score: 34)
-]
-
 
 class QuizViewModel: ObservableObject {
     @Published var state: QuizState = .initial

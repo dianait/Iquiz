@@ -11,7 +11,7 @@ struct ButtonView: View {
             .font(.system(.title2, design: .monospaced))
             .frame(width: 300, height: 50)
             .foregroundColor(.white)
-            .background(Color.blue.opacity(0.5))
+            .background(Color.blue.opacity(0.6))
             .cornerRadius(10)
     }
 }

@@ -6,6 +6,7 @@ struct StartView: View {
     
     var body: some View {
             VStack{
+                CustomText(text: "🎞 MOVIE QUIZ")
                 ImageView()
                     ButtonView(text: "✨ START", handle: viewModel.fetchQuestions)
                     ButtonView(text: "🏁 RANKING", handle: viewModel.gotRanking)

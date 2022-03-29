@@ -7,10 +7,7 @@ struct Ranking: View {
     var body: some View {
         VStack {
             HStack{
-                Text("🏁Ranking")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .padding()
+                CustomText(text: "🏁 Ranking")
                 if self.ranking != [] {
                     Button("🚮"){
                         viewModel.eraseRanking()
@@ -20,13 +17,16 @@ struct Ranking: View {
             }
            
             ScrollView{
+                if self.ranking == [] {
+                    CustomText(text: "There is no one in the ranking yet. Are you ready? 👇")
+                }
                 ForEach(self.ranking, id: \.self) { item in
                     RowView(name: item.name, score: item.score)
                     Divider()
                 }
             }
          
-            ButtonView(text: "TRY AGAIN", handle: {
+            ButtonView(text: "PLAY AGAIN", handle: {
                 viewModel.state = .initial
             })
             Spacer()

@@ -7,10 +7,10 @@ struct TrivialQuestion {
     let difficulty: String
     let question: String
     let correct_answer: String
-    var incorrect_answers: [String]
+    var answers: [String]
 }
 
-let trivialQuestionMock = TrivialQuestion(category: "Entertainment: Film", type: "multiple", difficulty: "easy", question: "Who directed E.T. the Extra-Terrestrial (1982)?", correct_answer: "Steven Spielberg", incorrect_answers: ["Stanley Kubrick", "James Cameron", "Tim Burton"])
+let trivialQuestionMock = TrivialQuestion(category: "Entertainment: Film", type: "multiple", difficulty: "easy", question: "Who directed E.T. the Extra-Terrestrial (1982)?", correct_answer: "Steven Spielberg", answers: ["Steven Spielberg", "Stanley Kubrick", "James Cameron", "Tim Burton"])
 
 class API {
     var questions : [TrivialQuestion] = []
@@ -34,10 +34,10 @@ class API {
                           let difficulty = q["difficulty"]!! as! String
                           let correct_answer = q["correct_answer"]!! as! String
                           let incorrect_answers = q["incorrect_answers"]!! as! [String]
-                          
+                          let answers = incorrect_answers + [correct_answer]
                           returnQuestion.append(
                             TrivialQuestion(category: category,
-                                            type: type, difficulty: difficulty, question: question, correct_answer: correct_answer, incorrect_answers: incorrect_answers))
+                                            type: type, difficulty: difficulty, question: question, correct_answer: correct_answer, answers: answers))
                          }
                         return returnQuestion
                   }

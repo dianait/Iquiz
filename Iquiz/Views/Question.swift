@@ -27,7 +27,7 @@ struct Question: View {
         VStack {
            
             CustomText(text: self.question.question)
-            ForEach(sortAnswers(correct_answer: self.question.correct_answer, incorrect_answers:self.question.incorrect_answers), id: \.self) { ans in
+            ForEach(self.question.answers.shuffled(), id: \.self) { ans in
                 ButtonView(text:ans, handle: {
                     
                     if self.index == self.play.NUM_QUESTIONS {

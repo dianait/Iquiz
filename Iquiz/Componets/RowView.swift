@@ -2,13 +2,13 @@ import SwiftUI
 
 struct RowView: View {
     let name: String
-    let score: String
+    let score: Int
     
     var body: some View {
         HStack{
             CustomText(text: "😊 \(name)")
                 .frame(maxWidth: .infinity, alignment: .leading)
-            CustomText(text: "🎖\(score)")
+            CustomText(text: "🎖\(String(score))")
                 .frame(maxWidth: .infinity, alignment: .trailing)
         }
     }
@@ -16,6 +16,6 @@ struct RowView: View {
 
 struct RowView_Previews: PreviewProvider {
     static var previews: some View {
-        RowView(name: "Diana", score: "345")
+        RowView(name: "Diana", score: 345)
     }
 }

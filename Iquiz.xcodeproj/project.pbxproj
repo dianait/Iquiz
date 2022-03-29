@@ -164,6 +164,7 @@
 				137B3CB027D432D500E3FE01 /* Ranking.swift */,
 				137B3CBB27D4450400E3FE01 /* Quiz.swift */,
 				137B3CAE27D4325200E3FE01 /* Question.swift */,
+				13BEC90827F0874F00EAF549 /* FormView.swift */,
 				13BEC90427F07C8300EAF549 /* StartView.swift */,
 			);
 			path = Views;
@@ -185,7 +186,6 @@
 				137B3CB227D436B400E3FE01 /* CustomText.swift */,
 				13BEC90627F0839500EAF549 /* ButtonView.swift */,
 				13BEC90A27F08BB800EAF549 /* ImageView.swift */,
-				13BEC90827F0874F00EAF549 /* FormView.swift */,
 				13BEC90227F0703700EAF549 /* ScoreView.swift */,
 				137B3CB627D43D3A00E3FE01 /* Counter.swift */,
 				13F450F627F0BB00006497A4 /* RowView.swift */,

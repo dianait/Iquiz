@@ -2,22 +2,16 @@ import SwiftUI
 
 struct StartView: View {
     var viewModel: QuizViewModel
+    @State private var username: String = ""
     
     var body: some View {
-        NavigationView {
             VStack{
-                CustomText(text: " 📽 CINEMA QUIZ")
                 ImageView()
-                NavigationLink(destination:Quiz()) {
                     ButtonView(text: "✨ START", handle: viewModel.fetchQuestions)
-                }
-                NavigationLink(destination:Ranking(viewModel: viewModel, ranking: rankingMock)) {
                     ButtonView(text: "🏁 RANKING", handle: viewModel.fetchRanking)
-                }
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
-        }
 
     }
 }

@@ -52,7 +52,7 @@ func getRanking() -> [Score] {
                  let rank = jsonResult["ranking"] as? [AnyObject] {
                   for r in rank {
                       let name = r["name"]!! as! String
-                      let score = r["score"]!! as! String
+                      let score = r["score"]!! as! Int
                       
                       ranking.append(
                         Score(name: name, score: score))

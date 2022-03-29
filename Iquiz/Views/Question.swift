@@ -31,7 +31,7 @@ struct Question: View {
                 ButtonView(text:ans, handle: {
                     
                     if self.index == self.play.NUM_QUESTIONS {
-                        viewModel.state = .saveData(Score(name: play.name, score: String(play.score)))
+                        viewModel.state = .saveData(Score(name: play.name, score: play.score))
                         return
                     }
                     

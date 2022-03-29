@@ -6,11 +6,21 @@ struct Question: View {
     @State var question: TrivialQuestion = trivialQuestionMock
     @State var index: Int = 0
     @State var timeRemaining: Int = 5
+    @State var showCorrectAnswer : Bool = false
     
     private func nextQuestion() -> Void {
-        self.timeRemaining = 30
-        self.index += 1
-        self.question = play.questions[index]
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            self.showCorrectAnswer = false
+            self.timeRemaining = 30
+            self.index += 1
+            self.question = play.questions[index]
+         }
+    }
+    
+    private func finish() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+            viewModel.state = .saveData(Score(name: play.name, score: play.score))
+         }
     }
     
     var body: some View {
@@ -22,21 +32,30 @@ struct Question: View {
                     self.question = play.questions[index]
             }
         }
-        
         VStack {
             CustomText(text: self.question.question)
-            ForEach(self.question.answers.shuffled(), id: \.self) { ans in
-                ButtonView(text:ans, handle: {
-                    if self.index == self.play.NUM_QUESTIONS {
-                        viewModel.state = .saveData(Score(name: play.name, score: play.score))
-                        return
-                    }
-                    if (ans == self.question.correct_answer) {
-                        self.play.score += self.timeRemaining
-                    }
-                    self.nextQuestion()
-                })
-              }
+            if self.showCorrectAnswer {
+                CustomText(text: "The correct answer was: \(question.correct_answer)")
+            }
+            else {
+                ForEach(self.question.answers.shuffled(), id: \.self) { ans in
+                    ButtonView(text:ans, handle: {
+                        if self.index == self.play.NUM_QUESTIONS {
+                            self.finish()
+                            return
+                        }
+                        if (ans == self.question.correct_answer) {
+                            self.play.score += self.timeRemaining
+                        }
+                        else {
+                            self.showCorrectAnswer = true
+                        }
+                        self.nextQuestion()
+                    })
+                  }
+                
+            }
+          
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }

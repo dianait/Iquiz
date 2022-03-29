@@ -10,6 +10,12 @@ struct Ranking: View {
                 .font(.title)
                 .fontWeight(.bold)
                 .padding()
+            if self.ranking != [] {
+                Button("🗑"){
+                    viewModel.eraseRanking()
+                    self.ranking = []
+                }
+            }
             ScrollView{
                 ForEach(self.ranking, id: \.self) { item in
                     RowView(name: item.name, score: item.score)

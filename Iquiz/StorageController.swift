@@ -1,0 +1,35 @@
+import Foundation
+
+class StorageController {
+    var ranking: [Score] = []
+    
+    init(){
+        self.ranking = get()
+    }
+    
+    func save(ranking: [Score]) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(ranking)
+            UserDefaults.standard.set(data, forKey: "ranking")
+            }
+        catch {
+            print("Unable to Encode Score Array (\(error))")
+        }
+    }
+
+    func get() -> [Score] {
+        var ranking: [Score] = []
+        if let data = UserDefaults.standard.data(forKey: "ranking") {
+            do {
+                let decoder = JSONDecoder()
+                ranking = try decoder.decode([Score].self, from: data)
+                return ranking
+            } catch {
+                print("Unable to Decode Score Array (\(error))")
+            }
+        }
+        return ranking
+    }
+
+}

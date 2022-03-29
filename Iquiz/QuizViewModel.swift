@@ -28,19 +28,15 @@ let rankingMock = [
 ]
 
 
-
 class QuizViewModel: ObservableObject {
     @Published var state: QuizState = .initial
     var questions: [TrivialQuestion] = []
     var ranking: [Score] = []
+    let storage: StorageController
 
     init(){
-        self.ranking = get()
-        if self.ranking == [] {
-            let rank = getRanking()
-            let rankSorted: [Score] = rank.sorted(by: { $0.score > $1.score })
-            save(ranking: rankSorted)
-        }
+        self.storage = StorageController()
+        self.ranking = storage.ranking
         self.questions = getTrivial()
     }
         
@@ -60,11 +56,12 @@ class QuizViewModel: ObservableObject {
             rankSorted.removeLast()
         }
         self.ranking = rankSorted
+        storage.save(ranking: self.ranking)
         return rankSorted
     }
     
     func eraseRanking() {
         self.ranking.removeAll()
-        save(ranking: self.ranking)
+        storage.save(ranking: self.ranking)
     }
 }

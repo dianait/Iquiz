@@ -21,19 +21,21 @@ class QuizViewModel: ObservableObject {
     var questions: [TrivialQuestion] = []
     var ranking: [Score] = []
     let storage: StorageController
+    let api: API
 
     init(){
         self.storage = StorageController()
+        self.api = API()
         self.ranking = storage.ranking
-        self.questions = getTrivial()
+        self.questions = api.questions
     }
         
-    func fetchQuestions() {
+    func suffledQuestions() {
         let questionUnsorted =  self.questions.shuffled()
         self.state = .playing(Play(questions:questionUnsorted))
     }
     
-    func gotRanking() {
+    func gotoRanking() {
         self.state = .finish(self.ranking)
     }
     

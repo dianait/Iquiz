@@ -8,8 +8,8 @@ struct StartView: View {
             VStack{
                 CustomText(text: "🎞 MOVIE QUIZ")
                 ImageView()
-                    ButtonView(text: "✨ START", handle: viewModel.fetchQuestions)
-                    ButtonView(text: "🏁 RANKING", handle: viewModel.gotRanking)
+                    ButtonView(text: "✨ START", handle: viewModel.suffledQuestions)
+                    ButtonView(text: "🏁 RANKING", handle: viewModel.gotoRanking)
             }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             

@@ -22,9 +22,9 @@ Aquí teneis toda la información de los retos 👇
   
 - ✅ Disponemos de 30 segundos para responder cada pregunta. El contador deberá aparecer en la pantalla, 
 
-- ❌ y si llega a 0 se tomará como respuesta incorrecta y se pasará a la siguiente pregunta.
+- ✅ y si llega a 0 se tomará como respuesta incorrecta y se pasará a la siguiente pregunta.
    
-- ❌ Al marcar una respuesta o finalizar el tiempo, se mostrará si se ha acertado o no la pregunta 
+- ✅ Al marcar una respuesta o finalizar el tiempo, se mostrará si se ha acertado o no la pregunta 
 
 - ✅ dando feedback sobre cuál sería la respuesta correcta y navegando al cabo de un par de segundos a la siguiente pantalla.
 

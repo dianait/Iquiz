@@ -19,7 +19,9 @@ struct FormView: View {
                     self.ranking = viewModel.sortRanking(score: score)
                     self.viewModel.state = .finish(self.ranking)
                 }
-            }
+            }.font(.system(.title2, design: .monospaced))
+                .frame(width: 400, height: 50)
+                .border(Color.blue)
                 Spacer()
         }
 

@@ -18,7 +18,9 @@ struct Ranking: View {
             }
             Button("PLAY AGAIN"){
                 viewModel.state = .initial
-            }
+            }.font(.system(.title2, design: .monospaced))
+                .frame(width: 400, height: 50)
+                .border(Color.blue)
             Spacer()
         }
     }

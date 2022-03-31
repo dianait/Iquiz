@@ -40,8 +40,7 @@ struct Question: View {
                             else {
                                 self.nextQuestion()
                             }
-                    }
-.frame(maxWidth: .infinity, alignment: .trailing)
+                    }.frame(maxWidth: .infinity, alignment: .trailing)
             }
         }.onAppear {
             self.question = play.questions[index]

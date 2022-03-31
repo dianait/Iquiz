@@ -7,9 +7,3 @@ struct ImageView: View {
             .aspectRatio(contentMode: .fit)
     }
 }
-
-struct ImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ImageView()
-    }
-}

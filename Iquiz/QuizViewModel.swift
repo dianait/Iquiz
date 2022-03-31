@@ -27,7 +27,7 @@ class QuizViewModel: ObservableObject {
         self.storage = StorageController()
         self.api = API()
         self.ranking = storage.ranking
-        self.questions = api.questions
+        self.questions = api.questions.shuffled()
     }
         
     func suffledQuestions() {

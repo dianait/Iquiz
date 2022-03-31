@@ -1,25 +1,30 @@
 import SwiftUI
 
 struct Question: View {
-    var viewModel: QuizViewModel
     @State var play: Play
-    @State var question: TrivialQuestion = trivialQuestionMock
     @State var index: Int = 0
-    @State var timeRemaining: Int = 5
-    @State var showCorrectAnswer : Bool = false
-    
+    var COUNTER_TIME: Int = 30
+    var viewModel: QuizViewModel
+    var TIME_TO_WAIT: Double = 2.0
+    @State var timeRemaining: Int = 30
+    @State var showCorrectAnswer: Bool = false
+    @State var question: TrivialQuestion = trivialQuestionMock
+    var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     private func nextQuestion() -> Void {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.showCorrectAnswer = false
-            self.timeRemaining = 30
+        self.showCorrectAnswer = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + TIME_TO_WAIT) {
+            self.timeRemaining = COUNTER_TIME
             self.index += 1
+            self.showCorrectAnswer = false
             self.question = play.questions[index]
-         }
+        }
     }
     
     private func finish() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            viewModel.state = .saveData(Score(name: play.name, score: play.score))
+        DispatchQueue.main.asyncAfter(deadline: .now() + TIME_TO_WAIT) {
+            let currentScore = Score(name: play.name, score: play.score)
+            viewModel.state = .saveData(currentScore)
          }
     }
     
@@ -27,46 +32,38 @@ struct Question: View {
         VStack {
             HStack{
                 ScoreView(score: play.score).frame(maxWidth: .infinity, alignment: .leading)
-                Counter(timeRemaining: $timeRemaining).frame(maxWidth: .infinity, alignment: .trailing)
-            }.onAppear{
-                    self.question = play.questions[index]
+                CustomText(text: "⏱ TIME: \(timeRemaining)")
+                    .onReceive(self.timer) { _ in
+                            if self.timeRemaining > 0 {
+                                self.timeRemaining -= 1
+                        }
+                            else {
+                                self.nextQuestion()
+                            }
+                    }
+.frame(maxWidth: .infinity, alignment: .trailing)
             }
+        }.onAppear {
+            self.question = play.questions[index]
         }
         VStack {
             CustomText(text: self.question.question)
-            if self.showCorrectAnswer {
-                CustomText(text: "The correct answer was: \(question.correct_answer)")
-            }
-            else {
-                ForEach(self.question.answers.shuffled(), id: \.self) { ans in
-                    ButtonView(text:ans, handle: {
+                ForEach(self.question.answers, id: \.self) { ans in
+                    ButtonView(answer: ans,
+                               text:ans.text, handle: {
+                        self.showCorrectAnswer = true
                         if self.index == self.play.NUM_QUESTIONS {
                             self.finish()
                             return
                         }
-                        if (ans == self.question.correct_answer) {
+                        if (ans.isCorrect) {
                             self.play.score += self.timeRemaining
                         }
-                        else {
-                            self.showCorrectAnswer = true
-                        }
                         self.nextQuestion()
-                    })
+                    }, showCorrectAnswer: $showCorrectAnswer)
                   }
-                
-            }
           
         }.frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
-let play = Play(questions: [trivialQuestionMock, trivialQuestionMock, trivialQuestionMock])
-
-struct Question_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack{
-            Question(viewModel: QuizViewModel(), play: play)
-        }
-       
-    }
-}

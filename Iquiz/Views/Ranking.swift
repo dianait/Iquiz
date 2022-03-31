@@ -6,16 +6,7 @@ struct Ranking: View {
     
     var body: some View {
         VStack {
-            HStack{
-                CustomText(text: "🏁 Ranking")
-                if self.ranking != [] {
-                    Button("🚮"){
-                        viewModel.eraseRanking()
-                        self.ranking = []
-                    }
-                }
-            }
-           
+            CustomText(text: "🏁 Ranking")
             ScrollView{
                 if self.ranking == [] {
                     CustomText(text: "There is no one in the ranking yet. Are you ready? 👇")
@@ -25,19 +16,11 @@ struct Ranking: View {
                     Divider()
                 }
             }
-         
-            ButtonView(text: "PLAY AGAIN", handle: {
+            Button("PLAY AGAIN"){
                 viewModel.state = .initial
-            })
+            }
             Spacer()
         }
-      
-    }
-}
-
-struct Ranking_Previews: PreviewProvider {
-    static var previews: some View {
-        Ranking(viewModel: QuizViewModel(), ranking: rankingMock)
     }
 }
 

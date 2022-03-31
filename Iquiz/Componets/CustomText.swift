@@ -14,8 +14,3 @@ struct CustomText: View {
             .padding()
     }
 }
-struct CustomText_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomText(text: "🎉 TEXTO CUSTOM")
-    }
-}

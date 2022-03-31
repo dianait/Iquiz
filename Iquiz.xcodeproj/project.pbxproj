@@ -18,7 +18,6 @@
 		137B3CAF27D4325200E3FE01 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CAE27D4325200E3FE01 /* Question.swift */; };
 		137B3CB127D432D500E3FE01 /* Ranking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB027D432D500E3FE01 /* Ranking.swift */; };
 		137B3CB327D436B400E3FE01 /* CustomText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB227D436B400E3FE01 /* CustomText.swift */; };
-		137B3CB727D43D3A00E3FE01 /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CB627D43D3A00E3FE01 /* Counter.swift */; };
 		137B3CBC27D4450400E3FE01 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137B3CBB27D4450400E3FE01 /* Quiz.swift */; };
 		13BEC90327F0703700EAF549 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90227F0703700EAF549 /* ScoreView.swift */; };
 		13BEC90527F07C8300EAF549 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90427F07C8300EAF549 /* StartView.swift */; };
@@ -63,7 +62,6 @@
 		137B3CAE27D4325200E3FE01 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		137B3CB027D432D500E3FE01 /* Ranking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ranking.swift; sourceTree = "<group>"; };
 		137B3CB227D436B400E3FE01 /* CustomText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomText.swift; sourceTree = "<group>"; };
-		137B3CB627D43D3A00E3FE01 /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 		137B3CBB27D4450400E3FE01 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		13BEC90227F0703700EAF549 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		13BEC90427F07C8300EAF549 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
@@ -187,7 +185,6 @@
 				13BEC90627F0839500EAF549 /* ButtonView.swift */,
 				13BEC90A27F08BB800EAF549 /* ImageView.swift */,
 				13BEC90227F0703700EAF549 /* ScoreView.swift */,
-				137B3CB627D43D3A00E3FE01 /* Counter.swift */,
 				13F450F627F0BB00006497A4 /* RowView.swift */,
 			);
 			path = Componets;
@@ -330,7 +327,6 @@
 				137B3CAF27D4325200E3FE01 /* Question.swift in Sources */,
 				13BEC90727F0839500EAF549 /* ButtonView.swift in Sources */,
 				13299D3327EA5BFC00BD2D5F /* QuizViewModel.swift in Sources */,
-				137B3CB727D43D3A00E3FE01 /* Counter.swift in Sources */,
 				137B3CB127D432D500E3FE01 /* Ranking.swift in Sources */,
 				1369DD8C27D42B3000FC6343 /* IquizApp.swift in Sources */,
 				137B3CBC27D4450400E3FE01 /* Quiz.swift in Sources */,

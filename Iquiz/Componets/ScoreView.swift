@@ -7,9 +7,3 @@ struct ScoreView: View {
         CustomText(text: "🎬 SCORE: \(score)")
     }
 }
-
-struct ScoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScoreView(score: 344)
-    }
-}

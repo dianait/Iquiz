@@ -8,7 +8,7 @@ var body: some View {
         case .initial:
             StartView(viewModel: viewModel)
         case .playing(let play):
-            Question(viewModel: viewModel, play: play)
+            Question(play: play, viewModel: viewModel)
         case .saveData(let userScore):
             FormView(viewModel: viewModel, score: userScore)
         case .finish(let scoreArray):

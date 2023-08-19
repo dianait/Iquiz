@@ -26,6 +26,7 @@
 		13BEC90B27F08BB800EAF549 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BEC90A27F08BB800EAF549 /* ImageView.swift */; };
 		13E1724527E9D78C00FDE567 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13E1724427E9D78C00FDE567 /* API.swift */; };
 		13F450F727F0BB00006497A4 /* RowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F450F627F0BB00006497A4 /* RowView.swift */; };
+		13FA8DF72A91316000C90416 /* ArcadeNameEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13FA8DF62A91316000C90416 /* ArcadeNameEntryView.swift */; };
 		13FE66F627EFBC2700F3A4ED /* trivial.json in Resources */ = {isa = PBXBuildFile; fileRef = 131CA51127EF43C300D54C63 /* trivial.json */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		13BEC90A27F08BB800EAF549 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		13E1724427E9D78C00FDE567 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		13F450F627F0BB00006497A4 /* RowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowView.swift; sourceTree = "<group>"; };
+		13FA8DF62A91316000C90416 /* ArcadeNameEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArcadeNameEntryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 				13BEC90A27F08BB800EAF549 /* ImageView.swift */,
 				13BEC90227F0703700EAF549 /* ScoreView.swift */,
 				13F450F627F0BB00006497A4 /* RowView.swift */,
+				13FA8DF62A91316000C90416 /* ArcadeNameEntryView.swift */,
 			);
 			path = Componets;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				13BEC90927F0874F00EAF549 /* FormView.swift in Sources */,
+				13FA8DF72A91316000C90416 /* ArcadeNameEntryView.swift in Sources */,
 				13F450F727F0BB00006497A4 /* RowView.swift in Sources */,
 				13BEC90527F07C8300EAF549 /* StartView.swift in Sources */,
 				137B3CAF27D4325200E3FE01 /* Question.swift in Sources */,

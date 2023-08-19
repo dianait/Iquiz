@@ -40,13 +40,16 @@ struct Question: View {
                             else {
                                 self.nextQuestion()
                             }
-                    }.frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                    .frame(maxWidth: .infinity, alignment: .trailing)
             }
         }.onAppear {
             self.question = play.questions[index]
         }
+
         VStack {
             CustomText(text: self.question.question)
+            
                 ForEach(self.question.answers, id: \.self) { ans in
                     ButtonView(answer: ans,
                                text:ans.text, handle: {
@@ -62,7 +65,8 @@ struct Question: View {
                     }, showCorrectAnswer: $showCorrectAnswer)
                   }
           
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

@@ -4,19 +4,37 @@ struct StartView: View {
     var viewModel: QuizViewModel
     
     var body: some View {
-            VStack{
+            VStack(spacing: 20) {
                 CustomText(text: "🎞 MOVIE QUIZ")
+
                 ImageView()
-                Button("✨ START"){
-                    viewModel.suffledQuestions()
-                }.font(.system(.title2, design: .monospaced))
-                    .frame(width: 400, height: 50)
-                    .border(Color.blue)
-                Button("🏁 RANKING"){
-                    viewModel.gotoRanking()
-                }.font(.system(.title2, design: .monospaced))
-                    .frame(width: 400, height: 50)
-                    .border(Color.blue)
-            }.frame(maxWidth: .infinity, maxHeight: .infinity)
+
+                Button(action: { viewModel.suffledQuestions() }) {
+                    button(text: "   ✨START   ") }
+                .buttonStyle(PlainButtonStyle())
+
+                Button(action: { viewModel.gotoRanking() }) {
+                    button(text: "🏁 RANKING") }
+                .buttonStyle(PlainButtonStyle())
+            }
+            .padding()
+    }
+}
+
+@ViewBuilder func button(text: String) -> some View {
+    Text(text)
+        .fontWeight(.light)
+               .font(.system(size: 16))
+               .padding(.horizontal, 30)
+               .padding(.vertical, 10)
+               .background(
+                   RoundedRectangle(cornerRadius: 15)
+                       .stroke(Color.gray.opacity(0.5), lineWidth: 1)
+               )
+}
+
+struct StartView_Previews: PreviewProvider {
+    static var previews: some View {
+        StartView(viewModel: QuizViewModel())
     }
 }

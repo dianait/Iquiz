@@ -25,48 +25,61 @@ struct Question: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + TIME_TO_WAIT) {
             let currentScore = Score(name: play.name, score: play.score)
             viewModel.state = .saveData(currentScore)
-         }
+        }
     }
     
     var body: some View {
         VStack {
-            HStack{
-                ScoreView(score: play.score).frame(maxWidth: .infinity, alignment: .leading)
-                CustomText(text: "⏱ TIME: \(timeRemaining)")
+            HStack {
+                Text("🎬 SCORE: \(play.score)")
+                    .font(.title3)
+                    .fontWeight(.light)
+                    .padding(.leading, 16)
+
+                Text( "⏱ \(timeRemaining)")
+                    .font(.title3)
+                    .fontWeight(.light)
                     .onReceive(self.timer) { _ in
-                            if self.timeRemaining > 0 {
-                                self.timeRemaining -= 1
+                        if self.timeRemaining > 0 {
+                            self.timeRemaining -= 1
                         }
-                            else {
-                                self.nextQuestion()
-                            }
+                        else {
+                            self.nextQuestion()
+                        }
                     }
                     .frame(maxWidth: .infinity, alignment: .trailing)
+                    .padding(.horizontal)
             }
-        }.onAppear {
+            
+                TriviaQuestionView(
+                    question: self.question,
+                    showCorrectAnswer: $showCorrectAnswer) {
+                    selectedAnswer in
+                    self.showCorrectAnswer = true
+                    if self.index == self.play.NUM_QUESTIONS {
+                        self.finish()
+                        return
+                    }
+                    if (question.answers[selectedAnswer].isCorrect) {
+                        self.play.score += self.timeRemaining
+                    }
+                    self.nextQuestion()
+                }
+        }
+        .onAppear {
             self.question = play.questions[index]
         }
-
-        VStack {
-            CustomText(text: self.question.question)
-            
-                ForEach(self.question.answers, id: \.self) { ans in
-                    ButtonView(answer: ans,
-                               text:ans.text, handle: {
-                        self.showCorrectAnswer = true
-                        if self.index == self.play.NUM_QUESTIONS {
-                            self.finish()
-                            return
-                        }
-                        if (ans.isCorrect) {
-                            self.play.score += self.timeRemaining
-                        }
-                        self.nextQuestion()
-                    }, showCorrectAnswer: $showCorrectAnswer)
-                  }
-          
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
+
+struct Question_Previews: PreviewProvider {
+    static var play = Play(
+        questions: Array(repeating: trivialQuestionMock, count: 40)
+    )
+
+    static var previews: some View {
+        Question(play: play, viewModel: QuizViewModel())
+    }
+}
+
 

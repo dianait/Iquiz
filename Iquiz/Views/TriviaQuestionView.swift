@@ -29,8 +29,6 @@ struct TriviaQuestionView: View {
                     action(index)
                 }
             }
-
-            Spacer()
         }
         .padding()
     }

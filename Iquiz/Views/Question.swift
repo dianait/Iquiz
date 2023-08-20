@@ -29,7 +29,7 @@ struct Question: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
             HStack {
                 Text("🎬 SCORE: \(play.score)")
                     .font(.title3)
@@ -50,7 +50,10 @@ struct Question: View {
                     .frame(maxWidth: .infinity, alignment: .trailing)
                     .padding(.horizontal)
             }
-            
+            .padding()
+
+            Spacer()
+
                 TriviaQuestionView(
                     question: self.question,
                     showCorrectAnswer: $showCorrectAnswer) {
@@ -65,6 +68,9 @@ struct Question: View {
                     }
                     self.nextQuestion()
                 }
+                    .padding(8)
+            Spacer()
+
         }
         .onAppear {
             self.question = play.questions[index]
@@ -78,7 +84,15 @@ struct Question_Previews: PreviewProvider {
     )
 
     static var previews: some View {
-        Question(play: play, viewModel: QuizViewModel())
+        Group {
+            Question(play: play, viewModel: QuizViewModel())
+                .previewDisplayName("☀️ Light mode")
+
+            Question(play: play, viewModel: QuizViewModel())
+                .preferredColorScheme(.dark)
+                .previewDisplayName("🌙 Dark mode")
+        }
+
     }
 }
 

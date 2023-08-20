@@ -41,22 +41,10 @@ struct RankingView: View {
             }.padding(.horizontal, 8)
 
 
-            Button(action: {
+            ButtonView(text: "🍿 Play again") {
                 viewModel.state = .initial
-            }) {
-                Text("🍿 Play again")
-                    .padding(.horizontal, 30)
-                    .padding(.vertical, 10)
-                    .frame(maxWidth: .infinity)
-                    .font(.system(size: 16))
-                    .foregroundColor(.black)
-                    .background(
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 15)
-                                .stroke(Color.gray.opacity(0.5), lineWidth: 1)
-                        }
-                    )
             }
+            
             Spacer()
         }
         .padding(16)

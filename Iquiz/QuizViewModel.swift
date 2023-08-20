@@ -4,6 +4,7 @@ import SwiftUI
 enum QuizState {
     case initial
     case playing(Play)
+    case loading
     case saveData(Score)
     case finish([Score])
 }

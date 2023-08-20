@@ -5,7 +5,16 @@ struct FormView: View {
     @State var score: Score
     @State var ranking: [Score] = []
 //    TODO: Get the position on the ranking
-    @State private var userRank: Int = 3
+//    @State private var userRank: Int = 3
+    let medal: [Int: String] = [1: "🥇", 2: "🥈", 3: "🥉"]
+
+    func medalImageOrNumber(for rank: Int) -> String {
+         return medal[rank] ?? "\(rank)"
+     }
+
+    var userRank: Int {
+        ranking.firstIndex(where: { $0.score == score.score }) ?? 3
+    }
     
     var body: some View {
         VStack {
@@ -19,17 +28,13 @@ struct FormView: View {
                 .font(.title)
                 .fontWeight(.bold)
 
-            rankImage()
-                .resizable()
-                .scaledToFit()
-                .frame(width: 200, height: 200)
-
             Text("🎉 You got ").font(.title3) +
             Text("\(userRank.ordinal)").bold().font(.title3) +
             Text(" place")
                 .font(.title3)
 
-            Divider()
+            Text(medalImageOrNumber(for: userRank))
+                .font(.system(size: 150))
 
             ArcadeNameEntry(viewModel: viewModel,
                             score: score,

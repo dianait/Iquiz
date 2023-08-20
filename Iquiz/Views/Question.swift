@@ -5,7 +5,7 @@ struct Question: View {
     @State var index: Int = 0
     var COUNTER_TIME: Int = 30
     var viewModel: QuizViewModel
-    var TIME_TO_WAIT: Double = 2.0
+    var TIME_TO_WAIT: Double = 1.0
     @State var timeRemaining: Int = 30
     @State var showCorrectAnswer: Bool = false
     @State var question: TrivialQuestion = trivialQuestionMock
@@ -66,10 +66,17 @@ struct Question: View {
                     if (question.answers[selectedAnswer].isCorrect) {
                         self.play.score += self.timeRemaining
                     }
+
+                    viewModel.state = .loading
                     self.nextQuestion()
                 }
                     .padding(8)
             Spacer()
+
+            ButtonView(text: "↩️ go back") {
+                viewModel.state = .initial
+            }
+            .frame(width: 180)
 
         }
         .onAppear {

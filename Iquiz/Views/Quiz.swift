@@ -12,7 +12,7 @@ var body: some View {
         case .saveData(let userScore):
             FormView(viewModel: viewModel, score: userScore)
         case .finish(let scoreArray):
-            Ranking(viewModel: viewModel, ranking: scoreArray)
+            RankingView(viewModel: viewModel, ranking: scoreArray)
         }
     }
 }

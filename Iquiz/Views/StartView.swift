@@ -5,7 +5,8 @@ struct StartView: View {
     
     var body: some View {
             VStack(spacing: 20) {
-                CustomText(text: "🎞 MOVIE QUIZ")
+                Text("🎞 MOVIE QUIZ")
+                    .font(.title)
 
                 ImageView()
 

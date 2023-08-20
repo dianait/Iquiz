@@ -30,7 +30,6 @@ struct AnswerButton: View {
                     }
                 )
         }
+        .buttonStyle(NoOpacityButtonStyle())
     }
 }
-
-

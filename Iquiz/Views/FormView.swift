@@ -8,14 +8,16 @@ struct FormView: View {
 //    @State private var userRank: Int = 3
     let medal: [Int: String] = [1: "🥇", 2: "🥈", 3: "🥉"]
 
+
     func medalImageOrNumber(for rank: Int) -> String {
          return medal[rank] ?? "\(rank)"
      }
 
     var userRank: Int {
-        ranking.firstIndex(where: { $0.score == score.score }) ?? 3
+        if (ranking.isEmpty) { return 1 }
+        return viewModel.sortRanking(score: score).firstIndex(where: { $0 == score }) ?? 3
     }
-    
+
     var body: some View {
         VStack {
 
@@ -43,10 +45,6 @@ struct FormView: View {
             
             Spacer()
         }
-    }
-
-    func rankImage() -> Image {
-        return Image(systemName: "\(userRank).circle.fill")
     }
 }
 

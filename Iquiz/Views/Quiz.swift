@@ -9,8 +9,6 @@ var body: some View {
             StartView(viewModel: viewModel)
         case .playing(let play):
             Question(play: play, viewModel: viewModel)
-        case .loading:
-            LoadingView()
         case .saveData(let userScore):
             FormView(viewModel: viewModel, score: userScore)
         case .finish(let scoreArray):

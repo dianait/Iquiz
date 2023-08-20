@@ -4,7 +4,6 @@ import SwiftUI
 enum QuizState {
     case initial
     case playing(Play)
-    case loading
     case saveData(Score)
     case finish([Score])
 }
@@ -14,7 +13,7 @@ struct Play {
     let questions: [TrivialQuestion]
     var score: Int = 0
     var index: Int = 1
-    let NUM_QUESTIONS = 9
+    let NUM_QUESTIONS = 10
 }
 
 class QuizViewModel: ObservableObject {

@@ -10,6 +10,7 @@ struct RankingView: View {
     var viewModel: QuizViewModel
     @State var ranking: [Score]
     let medal: [Int: String] = [1: "🥇", 2: "🥈", 3: "🥉"]
+    @State private var showingAlert = false
 
     func medalImageOrNumber(for rank: Int) -> String {
          return medal[rank] ?? "\(rank)"
@@ -22,6 +23,8 @@ struct RankingView: View {
                 .fontWeight(.ultraLight)
 
             Spacer()
+
+            if ranking.isEmpty { EmptyRankingView() }
 
             ForEach(ranking.indices, id: \.self) { index in
                 HStack {
@@ -44,18 +47,54 @@ struct RankingView: View {
             ButtonView(text: "🍿 Play again") {
                 viewModel.state = .initial
             }
+
+            ButtonView(text: "🗑️ Clean ranking") {
+                if (!ranking.isEmpty) {
+                    showingAlert = true
+                }
+            }
+            .conditionalShow(!ranking.isEmpty)
             
             Spacer()
         }
         .padding(16)
+        .alert(isPresented: $showingAlert) {
+            Alert(
+                title: Text("Delete Ranking"),
+                message: Text("Are you sure you want to delete the ranking? \n This action cannot be undone."),
+                primaryButton: .destructive(Text("Delete")) {
+                    viewModel.eraseRanking()
+                },
+                secondaryButton: .cancel(Text("Cancel"))
+            )
+        }
 
+    }
+}
+
+extension View {
+    func conditionalShow(_ condition: Bool) -> some View {
+        Group {
+            if condition {
+                self
+            }
+        }
     }
 }
 
 struct RankingView_Previews: PreviewProvider {
     static var previews: some View {
-        RankingView(
-            viewModel: QuizViewModel(),
-            ranking: generateRandomPlayers(count: 10))
+        Group {
+            RankingView(
+                viewModel: QuizViewModel(),
+                ranking: generateRandomPlayers(count: 10))
+            .previewDisplayName("Ranking fill")
+
+            RankingView(
+                viewModel: QuizViewModel(),
+                ranking: [])
+            .previewDisplayName("Ranking empty")
+        }
+
     }
 }

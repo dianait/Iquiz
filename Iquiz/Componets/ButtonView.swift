@@ -1,5 +1,14 @@
 import SwiftUI
 
+struct NoOpacityButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+        .scaleEffect(configuration.isPressed ? 0.97 : 1.0)
+    }
+}
+
+
+
 struct ButtonView: View {
     let text: String
     let action: () -> Void
@@ -21,5 +30,14 @@ struct ButtonView: View {
                     }
                 )
         }
+        .buttonStyle(NoOpacityButtonStyle())
     }
 }
+
+
+struct ButtonView_Previews: PreviewProvider {
+    static var previews: some View {
+        ButtonView(text: "✅ Siguiente") { }
+    }
+}
+

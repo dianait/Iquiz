@@ -27,17 +27,28 @@ struct Question: View {
             viewModel.state = .saveData(currentScore)
         }
     }
+
+    var scoreToShow: String {
+        "\(play.score < 10 ? "00" : "")\(play.score)"
+    }
     
     var body: some View {
         VStack(spacing: 8) {
-            HStack {
-                Text("🎬 SCORE: \(play.score)")
+            HStack{
+                Text("🌟 \(scoreToShow)")
                     .font(.title3)
                     .fontWeight(.light)
-                    .padding(.leading, 16)
 
-                Text( "⏱ \(timeRemaining)")
-                    .font(.title3)
+                Spacer()
+
+                QuestionNumberView(
+                    currentQuestion: $index,
+                    totalQuestions: play.NUM_QUESTIONS)
+
+                Spacer()
+
+                Text( "⏱ \(timeRemaining < 10 ? "0" : "")\(timeRemaining)")
+                    .font(.system(.title3, design: .monospaced))
                     .fontWeight(.light)
                     .onReceive(self.timer) { _ in
                         if self.timeRemaining > 0 {
@@ -47,10 +58,9 @@ struct Question: View {
                             self.nextQuestion()
                         }
                     }
-                    .frame(maxWidth: .infinity, alignment: .trailing)
-                    .padding(.horizontal)
+
             }
-            .padding()
+            .padding(16)
 
             Spacer()
 
@@ -67,7 +77,6 @@ struct Question: View {
                         self.play.score += self.timeRemaining
                     }
 
-                    viewModel.state = .loading
                     self.nextQuestion()
                 }
                     .padding(8)

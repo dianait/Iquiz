@@ -15,7 +15,11 @@ class StorageController {
     var ranking: [Score] = []
     
     init(){
-        self.ranking = get()
+        if CommandLine.arguments.contains("--mockRanking") {
+                 self.ranking = rankingMock
+             } else {
+                 self.ranking = get()
+             }
     }
     
     func save(ranking: [Score]) {

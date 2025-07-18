@@ -24,25 +24,28 @@ struct RankingView: View {
 
             Spacer()
 
-            if ranking.isEmpty { EmptyRankingView() }
+            if ranking.isEmpty {
+                EmptyRankingView()
+            } else {
+                List(ranking.indices, id: \.self) { index in
+                    HStack {
+                        Text(medalImageOrNumber(for: index + 1))
+                            .font(.body)
+                            .frame(width: 30, alignment: .center)
 
-            ForEach(ranking.indices, id: \.self) { index in
-                HStack {
-
-                    Text(medalImageOrNumber(for: index + 1))
-                    .font(.body)
-                    .frame(width: 30, alignment: .center)
-
-                    Text(ranking[index].name)
-                        .font(.system(size: 20))
-                        .foregroundColor(Color.black.opacity(0.5))
-                    Spacer()
-                    Text("\(ranking[index].score)")
-                        .font(.body)
-                        .foregroundColor(Color.black.opacity(0.6))
+                        Text(ranking[index].name)
+                            .font(.system(size: 20))
+                            .foregroundColor(Color.black.opacity(0.5))
+                        Spacer()
+                        Text("\(ranking[index].score)")
+                            .font(.body)
+                            .foregroundColor(Color.black.opacity(0.6))
+                    }
                 }
-            }.padding(.horizontal, 8)
-
+                .padding(.horizontal, 8)
+                .listStyle(.plain)
+                .accessibilityIdentifier("ranking_list")
+            }
 
             ButtonView(text: "🍿 Play again") {
                 viewModel.state = .initial
@@ -65,11 +68,11 @@ struct RankingView: View {
                 message: Text("Are you sure you want to delete the ranking? \n This action cannot be undone."),
                 primaryButton: .destructive(Text("Delete")) {
                     viewModel.eraseRanking()
+                    ranking.removeAll()
                 },
                 secondaryButton: .cancel(Text("Cancel"))
             )
         }
-
     }
 }
 
@@ -83,19 +86,14 @@ extension View {
     }
 }
 
-struct RankingView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            RankingView(
-                viewModel: QuizViewModel(),
-                ranking: generateRandomPlayers(count: 10))
-            .previewDisplayName("Ranking fill")
+#Preview("Ranking fill") {
+    RankingView(
+        viewModel: QuizViewModel(),
+        ranking: generateRandomPlayers(count: 10))
+}
 
-            RankingView(
-                viewModel: QuizViewModel(),
-                ranking: [])
-            .previewDisplayName("Ranking empty")
-        }
-
-    }
+#Preview("Ranking empty") {
+    RankingView(
+        viewModel: QuizViewModel(),
+        ranking: [])
 }

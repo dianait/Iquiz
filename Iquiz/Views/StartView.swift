@@ -18,6 +18,7 @@ struct StartView: View {
                 ButtonView(text: "🏁 RANKING") {
                     viewModel.gotoRanking()
                 }
+                .accessibilityIdentifier("ranking_button")
             }
             .padding()
     }

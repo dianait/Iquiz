@@ -12,6 +12,7 @@ struct EmptyRankingView: View {
             Text("No scores yet!")
                 .font(.title)
                 .fontWeight(.bold)
+                .accessibilityIdentifier("empty_ranking_headline")
 
             Text("Be the first to set a record and climb to the top of the leaderboard!")
                 .multilineTextAlignment(.center)

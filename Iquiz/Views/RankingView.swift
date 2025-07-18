@@ -53,6 +53,7 @@ struct RankingView: View {
                     showingAlert = true
                 }
             }
+            .accessibilityIdentifier("clean_ranking_button")
             .conditionalShow(!ranking.isEmpty)
             
             Spacer()

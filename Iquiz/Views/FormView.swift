@@ -38,10 +38,7 @@ struct FormView: View {
             Text(medalImageOrNumber(for: userRank))
                 .font(.system(size: 150))
 
-            ArcadeNameEntry(viewModel: viewModel,
-                            score: score,
-                            ranking: ranking
-            )
+            ArcadeNameEntry(viewModel: viewModel, score: score)
             
             Spacer()
         }

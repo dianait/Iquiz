@@ -7,11 +7,10 @@ struct Player: Identifiable {
 }
 
 struct RankingView: View {
-    var viewModel: QuizViewModel
-    @State var ranking: [Score]
+    @ObservedObject var viewModel: QuizViewModel
     let medal: [Int: String] = [1: "🥇", 2: "🥈", 3: "🥉"]
     @State private var showingAlert = false
-
+        
     func medalImageOrNumber(for rank: Int) -> String {
          return medal[rank] ?? "\(rank)"
      }
@@ -24,20 +23,21 @@ struct RankingView: View {
 
             Spacer()
 
-            if ranking.isEmpty {
+            if viewModel.ranking.isEmpty {
                 EmptyRankingView()
             } else {
-                List(ranking.indices, id: \.self) { index in
+                List(viewModel.ranking.indices, id: \.self) { index in
+                    let score = viewModel.ranking[index]
                     HStack {
                         Text(medalImageOrNumber(for: index + 1))
                             .font(.body)
                             .frame(width: 30, alignment: .center)
 
-                        Text(ranking[index].name)
+                        Text(score.name)
                             .font(.system(size: 20))
                             .foregroundColor(Color.black.opacity(0.5))
                         Spacer()
-                        Text("\(ranking[index].score)")
+                        Text("\(score.score)")
                             .font(.body)
                             .foregroundColor(Color.black.opacity(0.6))
                     }
@@ -52,12 +52,12 @@ struct RankingView: View {
             }
 
             ButtonView(text: "🗑️ Clean ranking") {
-                if (!ranking.isEmpty) {
+                if (!viewModel.ranking.isEmpty) {
                     showingAlert = true
                 }
             }
             .accessibilityIdentifier("clean_ranking_button")
-            .conditionalShow(!ranking.isEmpty)
+            .conditionalShow(!viewModel.ranking.isEmpty)
             
             Spacer()
         }
@@ -68,7 +68,6 @@ struct RankingView: View {
                 message: Text("Are you sure you want to delete the ranking? \n This action cannot be undone."),
                 primaryButton: .destructive(Text("Delete")) {
                     viewModel.eraseRanking()
-                    ranking.removeAll()
                 },
                 secondaryButton: .cancel(Text("Cancel"))
             )
@@ -87,13 +86,11 @@ extension View {
 }
 
 #Preview("Ranking fill") {
-    RankingView(
-        viewModel: QuizViewModel(),
-        ranking: generateRandomPlayers(count: 10))
+    let vm = QuizViewModel()
+    vm.ranking = generateRandomPlayers(count: 10)
+    return RankingView(viewModel: vm)
 }
 
 #Preview("Ranking empty") {
-    RankingView(
-        viewModel: QuizViewModel(),
-        ranking: [])
+    RankingView(viewModel: QuizViewModel())
 }

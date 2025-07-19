@@ -46,5 +46,4 @@ class StorageController {
         }
         return ranking
     }
-
 }

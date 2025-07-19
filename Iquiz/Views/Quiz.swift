@@ -2,6 +2,7 @@ import SwiftUI
 
 struct Quiz: View {
     @StateObject var viewModel = QuizViewModel()
+    
 var body: some View {
     VStack{
         switch viewModel.state {
@@ -11,8 +12,8 @@ var body: some View {
             Question(play: play, viewModel: viewModel)
         case .saveData(let userScore):
             FormView(viewModel: viewModel, score: userScore)
-        case .finish(let scoreArray):
-            RankingView(viewModel: viewModel, ranking: scoreArray)
+        case .finish:
+            RankingView(viewModel: viewModel)
         }
     }
 }

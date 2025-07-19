@@ -5,7 +5,7 @@ enum QuizState {
     case initial
     case playing(Play)
     case saveData(Score)
-    case finish([Score])
+    case finish
 }
 
 struct Play {
@@ -18,8 +18,8 @@ struct Play {
 
 class QuizViewModel: ObservableObject {
     @Published var state: QuizState = .initial
+    @Published var ranking: [Score] = []
     var questions: [TrivialQuestion] = []
-    var ranking: [Score] = []
     let storage: StorageController
     let api: API
 
@@ -36,7 +36,7 @@ class QuizViewModel: ObservableObject {
     }
     
     func gotoRanking() {
-        self.state = .finish(self.ranking)
+        self.state = .finish
     }
     
     func sortRanking(score: Score) -> [Score] {

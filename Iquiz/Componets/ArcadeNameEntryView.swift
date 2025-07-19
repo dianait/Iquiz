@@ -5,13 +5,11 @@ struct ArcadeNameEntry: View {
     @State private var letter2: String = ""
     @State private var letter3: String = ""
     var viewModel: QuizViewModel
-    @State var ranking: [Score]
     @State var score: Score
 
-    init(viewModel: QuizViewModel, score: Score, ranking: [Score]) {
+    init(viewModel: QuizViewModel, score: Score) {
         self.viewModel = viewModel
         self.score = score
-        self.ranking = ranking
     }
 
     var isButtonEnabled: Bool {
@@ -32,8 +30,8 @@ struct ArcadeNameEntry: View {
 
             Button("💾 SAVE") {
                 self.score.name = "\(letter1).\(letter2).\(letter3)"
-                self.ranking = viewModel.sortRanking(score: score)
-                self.viewModel.state = .finish(self.ranking)
+                viewModel.sortRanking(score: score)
+                self.viewModel.state = .finish
             }
             .padding(.horizontal, 30)
               .padding(.vertical, 10)
@@ -55,11 +53,7 @@ struct ArcadeNameEntry: View {
 struct ArcadeNameEntry_Previews: PreviewProvider {
     static var score = Score(name: "", score: 45)
     static var previews: some View {
-        ArcadeNameEntry(
-            viewModel: QuizViewModel(),
-            score: score,
-            ranking: [score]
-        )
+        ArcadeNameEntry(viewModel: QuizViewModel(), score: score)
             .previewLayout(.sizeThatFits)
     }
 }

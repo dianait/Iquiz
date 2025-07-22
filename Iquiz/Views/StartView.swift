@@ -16,14 +16,14 @@ struct StartView: View {
                     .accessibilityHidden(true)
 
                 ButtonView(text: "✨START") {
-                    viewModel.shuffledQuestions()
+                    viewModel.startNewGame()
                 }
                 .accessibilityIdentifier("start_button")
                 .accessibilityLabel("Comenzar el quiz")
                 .accessibilityHint("Inicia una nueva partida del quiz de películas")
 
                 ButtonView(text: "🏁 RANKING") {
-                    viewModel.gotoRanking()
+                    viewModel.goToRanking()
                 }
                 .accessibilityIdentifier("ranking_button")
                 .accessibilityLabel("Ver ranking")

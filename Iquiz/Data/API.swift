@@ -5,7 +5,7 @@ struct Answer: Hashable {
     let text: String
     let isCorrect: Bool
 }
-struct TrivialQuestion {
+struct TrivialQuestion: Equatable {
     let category: String
     let type: String
     let difficulty: String

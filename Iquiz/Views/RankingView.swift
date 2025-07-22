@@ -60,7 +60,7 @@ struct RankingView: View {
             }
 
             ButtonView(text: "🍿 Play again") {
-                viewModel.state = .initial
+                viewModel.goToInitial()
             }
             .accessibilityIdentifier("play_again_button")
             .accessibilityLabel("Jugar de nuevo")
@@ -84,7 +84,7 @@ struct RankingView: View {
                 title: Text("Delete Ranking"),
                 message: Text("Are you sure you want to delete the ranking? \n This action cannot be undone."),
                 primaryButton: .destructive(Text("Delete")) {
-                    viewModel.eraseRanking()
+                    viewModel.clearRanking()
                 },
                 secondaryButton: .cancel(Text("Cancel"))
             )
@@ -102,12 +102,6 @@ extension View {
     }
 }
 
-#Preview("Ranking fill") {
-    let vm = QuizViewModel()
-    vm.ranking = generateRandomPlayers(count: 10)
-    return RankingView(viewModel: vm)
-}
-
-#Preview("Ranking empty") {
+#Preview {
     RankingView(viewModel: QuizViewModel())
 }

@@ -1,6 +1,6 @@
 # IQuiz
 
-CUESTIONARIO CONTRARRELOJ: Crea una "Quiz app" contrareloj con ranking by [Muredev](https://github.com/mouredev/) 
+CUESTIONARIO CONTRARRELOJ: Crea una "Quiz app" contrareloj con ranking by [Mouredev](https://github.com/mouredev/) 
 
 Aquí teneis toda la información de los retos 👇
 

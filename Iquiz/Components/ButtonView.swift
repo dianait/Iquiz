@@ -31,6 +31,8 @@ struct ButtonView: View {
                 )
         }
         .buttonStyle(NoOpacityButtonStyle())
+        .accessibilityLabel(text)
+        .accessibilityAddTraits(.isButton)
     }
 }
 

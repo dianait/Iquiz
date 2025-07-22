@@ -18,5 +18,8 @@ struct SingleLetterTextField: View {
             .keyboardType(.alphabet)
             .autocapitalization(.allCharacters)
             .disableAutocorrection(true)
+            .accessibilityLabel("Campo de texto")
+            .accessibilityHint("Ingresa una letra")
+            .accessibilityValue(text.isEmpty ? "Vacío" : text)
     }
 }

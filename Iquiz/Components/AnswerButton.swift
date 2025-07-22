@@ -31,5 +31,12 @@ struct AnswerButton: View {
                 )
         }
         .buttonStyle(NoOpacityButtonStyle())
+        .accessibilityLabel(answer.text)
+        .accessibilityHint(
+            showCorrectAnswer
+                ? (answer.isCorrect ? "Respuesta correcta" : "Respuesta incorrecta")
+                : "Seleccionar esta respuesta"
+        )
+        .accessibilityAddTraits(.isButton)
     }
 }

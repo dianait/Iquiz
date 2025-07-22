@@ -20,6 +20,8 @@ struct RankingView: View {
             Text("🏁 Ranking")
                 .font(.title)
                 .fontWeight(.ultraLight)
+                .accessibilityLabel("Título del ranking")
+                .accessibilityValue("Ranking de puntuaciones")
 
             Spacer()
 
@@ -32,24 +34,37 @@ struct RankingView: View {
                         Text(medalImageOrNumber(for: index + 1))
                             .font(.body)
                             .frame(width: 30, alignment: .center)
+                            .accessibilityLabel("Posición")
+                            .accessibilityValue("Posición \(index + 1)")
 
                         Text(score.name)
                             .font(.system(size: 20))
                             .foregroundColor(Color.black.opacity(0.5))
+                            .accessibilityLabel("Nombre del jugador")
+                            .accessibilityValue(score.name)
                         Spacer()
                         Text("\(score.score)")
                             .font(.body)
                             .foregroundColor(Color.black.opacity(0.6))
+                            .accessibilityLabel("Puntuación")
+                            .accessibilityValue("\(score.score) puntos")
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Jugador \(index + 1)")
+                    .accessibilityValue("\(score.name) con \(score.score) puntos")
                 }
                 .padding(.horizontal, 8)
                 .listStyle(.plain)
                 .accessibilityIdentifier("ranking_list")
+                .accessibilityLabel("Lista del ranking")
             }
 
             ButtonView(text: "🍿 Play again") {
                 viewModel.state = .initial
             }
+            .accessibilityIdentifier("play_again_button")
+            .accessibilityLabel("Jugar de nuevo")
+            .accessibilityHint("Inicia una nueva partida")
 
             ButtonView(text: "🗑️ Clean ranking") {
                 if (!viewModel.ranking.isEmpty) {
@@ -57,6 +72,8 @@ struct RankingView: View {
                 }
             }
             .accessibilityIdentifier("clean_ranking_button")
+            .accessibilityLabel("Limpiar ranking")
+            .accessibilityHint("Elimina todas las puntuaciones del ranking")
             .conditionalShow(!viewModel.ranking.isEmpty)
             
             Spacer()

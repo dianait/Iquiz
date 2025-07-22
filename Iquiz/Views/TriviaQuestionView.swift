@@ -21,6 +21,8 @@ struct TriviaQuestionView: View {
                 .font(.title2)
                 .fontWeight(.light)
                 .multilineTextAlignment(.center)
+                .accessibilityLabel("Pregunta")
+                .accessibilityValue(questionText)
 
             ForEach(0..<answerOptions.count, id: \.self) { index in
                 AnswerButton(answer: answerOptions[index],
@@ -28,9 +30,13 @@ struct TriviaQuestionView: View {
                 ) {
                     action(index)
                 }
+                .accessibilityIdentifier("answer_button_\(index)")
+                .accessibilityLabel("Opción \(index + 1)")
+                .accessibilityValue(answerOptions[index].text)
             }
         }
         .padding()
+        .accessibilityElement(children: .contain)
     }
 }
 

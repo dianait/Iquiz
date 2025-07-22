@@ -25,6 +25,8 @@ struct QuestionNumberView: View {
 
 
         }
+        .accessibilityLabel("Progreso de preguntas")
+        .accessibilityValue("Pregunta \(currentQuestion + 1) de \(totalQuestions)")
     }
 }
 

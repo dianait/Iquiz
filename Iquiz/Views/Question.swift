@@ -38,6 +38,8 @@ struct Question: View {
                 Text("🌟 \(scoreToShow)")
                     .font(.title3)
                     .fontWeight(.light)
+                    .accessibilityLabel("Puntuación actual")
+                    .accessibilityValue("\(play.score) puntos")
 
                 Spacer()
 
@@ -50,6 +52,8 @@ struct Question: View {
                 Text( "⏱ \(timeRemaining < 10 ? "0" : "")\(timeRemaining)")
                     .font(.system(.title3, design: .monospaced))
                     .fontWeight(.light)
+                    .accessibilityLabel("Tiempo restante")
+                    .accessibilityValue("\(timeRemaining) segundos")
                     .onReceive(self.timer) { _ in
                         if self.timeRemaining > 0 {
                             self.timeRemaining -= 1
@@ -86,6 +90,8 @@ struct Question: View {
                 viewModel.state = .initial
             }
             .frame(width: 180)
+            .accessibilityIdentifier("go_back_button")
+            .accessibilityLabel("Volver al menú principal")
 
         }
         .onAppear {

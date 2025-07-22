@@ -21,12 +21,22 @@ struct ArcadeNameEntry: View {
             Text("🎰 Enter Your Initials...")
                 .font(.title2)
                 .fontWeight(.light)
+                .accessibilityLabel("Instrucciones")
+                .accessibilityValue("Ingresa tus iniciales")
 
             HStack(spacing: 20) {
                 SingleLetterTextField(text: $letter1)
+                    .accessibilityIdentifier("initial_1")
+                    .accessibilityLabel("Primera inicial")
                 SingleLetterTextField(text: $letter2)
+                    .accessibilityIdentifier("initial_2")
+                    .accessibilityLabel("Segunda inicial")
                 SingleLetterTextField(text: $letter3)
+                    .accessibilityIdentifier("initial_3")
+                    .accessibilityLabel("Tercera inicial")
             }
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel("Campo de iniciales")
 
             Button("💾 SAVE") {
                 self.score.name = "\(letter1).\(letter2).\(letter3)"
@@ -34,19 +44,28 @@ struct ArcadeNameEntry: View {
                 self.viewModel.state = .finish
             }
             .padding(.horizontal, 30)
-              .padding(.vertical, 10)
-              .foregroundColor(isButtonEnabled ? Color.gray.opacity(1) : Color.gray.opacity(0.4))
-              .background(
-                  RoundedRectangle(cornerRadius: 15)
+            .padding(.vertical, 10)
+            .foregroundColor(isButtonEnabled ? Color.gray.opacity(1) : Color.gray.opacity(0.4))
+            .background(
+                RoundedRectangle(cornerRadius: 15)
                     .fill(isButtonEnabled ? .clear : Color.gray.opacity(0.2))
-              )
-              .overlay(
-                  RoundedRectangle(cornerRadius: 15)
-                      .stroke(isButtonEnabled ? Color.gray.opacity(1) : Color.gray.opacity(0.3), lineWidth: 1)
-              )
-              .disabled(!isButtonEnabled)
-          }
-          .padding()
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(
+                        isButtonEnabled ? Color.gray.opacity(1) : Color.gray.opacity(0.3),
+                        lineWidth: 1)
+            )
+            .disabled(!isButtonEnabled)
+            .accessibilityIdentifier("save_button")
+            .accessibilityLabel("Guardar puntuación")
+            .accessibilityHint(
+                isButtonEnabled
+                    ? "Guarda tu puntuación en el ranking"
+                    : "Completa las tres iniciales para guardar")
+        }
+        .padding()
+        .accessibilityElement(children: .contain)
     }
 }
 

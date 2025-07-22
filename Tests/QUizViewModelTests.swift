@@ -1,32 +1,33 @@
 import XCTest
+
 @testable import Iquiz
 
-final class QUizViewModelTests: XCTestCase {
+final class QuizViewModelTests: XCTestCase {
     var viewModel: QuizViewModel!
-    
+
     override func setUp() {
         super.setUp()
         viewModel = QuizViewModel()
     }
-    
+
     override func tearDown() {
         viewModel = nil
         super.tearDown()
     }
-    
+
     func testEraseRanking() {
         // Given
-           viewModel.ranking = [
-               Score(name: "PLAYER1", score: 123),
-               Score(name: "PLAYER2", score: 45),
-               Score(name: "PLAYER3", score: 34)
-           ]
-           
+        viewModel.ranking = [
+            Score(name: "PLAYER1", score: 123),
+            Score(name: "PLAYER2", score: 45),
+            Score(name: "PLAYER3", score: 34),
+        ]
+
         // When
-           viewModel.eraseRanking()
-        
+        viewModel.eraseRanking()
+
         // Then
-           XCTAssert(viewModel.ranking.isEmpty)
-       }
+        XCTAssert(viewModel.ranking.isEmpty)
+    }
 
 }

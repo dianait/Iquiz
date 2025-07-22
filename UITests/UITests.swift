@@ -1,6 +1,6 @@
 import XCTest
 
-final class IquizeUITests: XCTestCase {
+final class IquizUITests: XCTestCase {
     var app: XCUIApplication!
 
     override func setUpWithError() throws {

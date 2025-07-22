@@ -2,25 +2,25 @@ import SwiftUI
 
 struct StartView: View {
     var viewModel: QuizViewModel
-    
+
     var body: some View {
-            VStack(spacing: 20) {
-                Text("🎞 MOVIE QUIZ")
-                    .font(.title)
-                    .fontWeight(.light)
+        VStack(spacing: 20) {
+            Text("🎞 MOVIE QUIZ")
+                .font(.title)
+                .fontWeight(.light)
 
-                ImageView(name: "cinema")
+            ImageView(name: "cinema")
 
-                ButtonView(text: "✨START") {
-                    viewModel.suffledQuestions()
-                }
-
-                ButtonView(text: "🏁 RANKING") {
-                    viewModel.gotoRanking()
-                }
-                .accessibilityIdentifier("ranking_button")
+            ButtonView(text: "✨START") {
+                viewModel.shuffledQuestions()
             }
-            .padding()
+
+            ButtonView(text: "🏁 RANKING") {
+                viewModel.gotoRanking()
+            }
+            .accessibilityIdentifier("ranking_button")
+        }
+        .padding()
     }
 }
 

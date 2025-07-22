@@ -23,22 +23,22 @@ class QuizViewModel: ObservableObject {
     let storage: StorageController
     let api: API
 
-    init(){
+    init() {
         self.storage = StorageController()
         self.api = API()
         self.ranking = storage.ranking
         self.questions = api.questions.shuffled()
     }
-        
-    func suffledQuestions() {
-        let questionUnsorted =  self.questions.shuffled()
-        self.state = .playing(Play(questions:questionUnsorted))
+
+    func shuffledQuestions() {
+        let questionUnsorted = self.questions.shuffled()
+        self.state = .playing(Play(questions: questionUnsorted))
     }
-    
+
     func gotoRanking() {
         self.state = .finish
     }
-    
+
     func sortRanking(score: Score) -> [Score] {
         self.ranking.append(score)
         var rankSorted: [Score] = self.ranking.sorted(by: { $0.score > $1.score })
@@ -49,7 +49,7 @@ class QuizViewModel: ObservableObject {
         storage.save(ranking: self.ranking)
         return rankSorted
     }
-    
+
     func eraseRanking() {
         self.ranking.removeAll()
         storage.save(ranking: self.ranking)

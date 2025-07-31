@@ -1,0 +1,51 @@
+# Configuración de SwiftLint para el proyecto Iquiz
+# Este archivo define las reglas de estilo y linting para el código Swift
+
+# Reglas habilitadas
+disabled_rules:
+  - trailing_whitespace
+  - line_length
+  - function_body_length
+  - type_body_length
+  - file_length
+  - cyclomatic_complexity
+  - identifier_name
+  - force_cast
+  - force_unwrapping
+  - vertical_whitespace
+  - trailing_newline
+  - opening_brace
+  - statement_position
+  - colon
+  - return_arrow_whitespace
+  - syntactic_sugar
+  - trailing_comma
+  - control_statement
+
+# Reglas opcionales habilitadas
+opt_in_rules:
+  - empty_count
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+  - overridden_super_call
+  - redundant_nil_coalescing
+  - sorted_imports
+  - vertical_whitespace
+
+# Configuración específica de reglas (solo para reglas habilitadas)
+# Las reglas deshabilitadas no necesitan configuración
+
+# Excluir directorios y archivos
+excluded:
+  - Pods
+  - Carthage
+  - Tests
+  - UITests
+  - .build
+  - DerivedData
+
+# Configuración de reporter
+reporter: "xcode"
+
+# Configuración de cache
+cache_path: .swiftlint_cache 

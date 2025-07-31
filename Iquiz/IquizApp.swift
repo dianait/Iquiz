@@ -11,3 +11,4 @@ struct IquizApp: App {
 // Test comment
 // Another test comment
 // Test comment for English hook
+// Test comment to verify English hook functionality

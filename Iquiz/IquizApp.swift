@@ -8,5 +8,3 @@ struct IquizApp: App {
         }
     }
 }
-
-// Comentario de prueba para el hook

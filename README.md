@@ -8,7 +8,6 @@ Una aplicación de trivia/quiz desarrollada en SwiftUI para iOS.
 - Sistema de preguntas y respuestas
 - Ranking de puntuaciones
 - Almacenamiento local de datos
-- Diseño responsive
 
 ## 📱 Tecnologías
 
